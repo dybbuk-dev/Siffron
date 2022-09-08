@@ -1,0 +1,30 @@
+.scrollbar-track {
+  background: transparent !important;
+}
+
+.sidenav .scrollbar-track-x {
+  display: none !important;
+}
+
+/* ===== Scrollbar CSS ===== */
+/* Firefox */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #777777 transparent;
+}
+
+/* Chrome, Edge, and Safari */
+*::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+*::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 6px;
+}
+
+*::-webkit-scrollbar-thumb {
+  background-color: #777777;
+  border-radius: 6px;
+}
