@@ -27,7 +27,7 @@ const en = {
   },
 
   app: {
-    title: 'VOR | GRC - Informed Awareness',
+    title: 'Siffron',
   },
 
   api: {

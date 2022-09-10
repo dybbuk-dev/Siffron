@@ -1,6 +1,6 @@
 {
-  "name": "vor-grc-informed-awareness-frontend",
-  "description": "VOR | GRC - Informed Awareness - Frontend",
+  "name": "siffron-frontend",
+  "description": "Siffron - Frontend",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
