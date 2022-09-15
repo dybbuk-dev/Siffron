@@ -7,7 +7,6 @@ import {
   profileRoutes,
   tenantRoutes,
   userRoutes,
-  planRoutes,
 } from 'src/view/menus';
 
 import { useEffect, useRef, useState } from 'react';
@@ -137,12 +136,6 @@ function Menu({
     return permissionChecker.match(permission);
   };
 
-  const lockedForCurrentPlan = (permission) => {
-    return permissionChecker.lockedForCurrentPlan(
-      permission,
-    );
-  };
-
   useEffect(() => {
     setOpenCollapse(collapseName);
     setOpenNestedCollapse(itemParentName);
@@ -189,7 +182,6 @@ function Menu({
   const renderAvailable = (permissionRequired) => {
     return {
       visible: match(permissionRequired),
-      disabled: lockedForCurrentPlan(permissionRequired),
     };
   };
 
@@ -203,7 +195,7 @@ function Menu({
         href,
         permissionRequired,
       }: any) => {
-        const { visible, disabled } = renderAvailable(
+        const { visible } = renderAvailable(
           permissionRequired,
         );
         const active = !!findRoute(path, currentRoutes);
@@ -214,28 +206,22 @@ function Menu({
         return href ? (
           <Link
             key={key}
-            href={disabled ? '#' : href}
+            href={href}
             target="_blank"
             rel="noreferrer"
             sx={{ textDecoration: 'none' }}
           >
-            <SidenavItem
-              name={name}
-              disabled={disabled}
-              nested
-            />
+            <SidenavItem name={name} nested />
           </Link>
         ) : (
           <NavLink
-            to={disabled ? '#' : path}
-            disabled={disabled}
+            to={path}
             key={key}
             style={{ textDecoration: 'none' }}
           >
             <SidenavItem
               name={name}
               active={active}
-              disabled={disabled}
               nested
             />
           </NavLink>
@@ -255,7 +241,7 @@ function Menu({
         icon,
         permissionRequired,
       }: any) => {
-        const { visible, disabled } = renderAvailable(
+        const { visible } = renderAvailable(
           permissionRequired,
         );
         const active = !!findRoute(path, currentRoutes);
@@ -270,7 +256,6 @@ function Menu({
         if (collapse) {
           returnValue = (
             <SidenavItem
-              disabled={disabled}
               key={key}
               color={color}
               name={name}
@@ -293,7 +278,7 @@ function Menu({
         } else {
           returnValue = href ? (
             <Link
-              href={disabled ? '#' : href}
+              href={href}
               key={key}
               target="_blank"
               rel="noreferrer"
@@ -304,12 +289,11 @@ function Menu({
                 name={name}
                 active={!!findRoute(path, currentRoutes)}
                 icon={icon}
-                disabled={disabled}
               />
             </Link>
           ) : (
             <NavLink
-              to={disabled ? '#' : path}
+              to={path}
               key={key}
               style={{ textDecoration: 'none' }}
             >
@@ -318,7 +302,6 @@ function Menu({
                 name={name}
                 active={!!findRoute(path, currentRoutes)}
                 icon={icon}
-                disabled={disabled}
               />
             </NavLink>
           );
@@ -344,7 +327,7 @@ function Menu({
         path,
         permissionRequired,
       }: any) => {
-        const { visible, disabled } = renderAvailable(
+        const { visible } = renderAvailable(
           permissionRequired,
         );
         const active = !!findRoute(path, currentRoutes);
@@ -362,7 +345,7 @@ function Menu({
           if (href) {
             returnValue = (
               <Link
-                href={disabled ? '#' : href}
+                href={href}
                 key={key}
                 target="_blank"
                 rel="noreferrer"
@@ -373,23 +356,17 @@ function Menu({
                   icon={icon}
                   active={key === collapseName}
                   noCollapse={noCollapse}
-                  disabled={disabled}
                 />
               </Link>
             );
           } else if (noCollapse && path) {
             returnValue = (
-              <NavLink
-                to={disabled ? '#' : path}
-                key={key}
-                disabled={disabled}
-              >
+              <NavLink to={path} key={key}>
                 <SidenavCollapse
                   name={name}
                   icon={icon}
                   noCollapse={noCollapse}
                   active={active}
-                  disabled={disabled}
                 >
                   {collapse
                     ? renderCollapse(collapse)
@@ -405,7 +382,6 @@ function Menu({
                 icon={icon}
                 active={key === collapseName}
                 open={openCollapse === key}
-                disabled={disabled}
                 onClick={() =>
                   openCollapse === key
                     ? setOpenCollapse(false)
@@ -522,7 +498,7 @@ function Menu({
                       ? tenantRoutes
                       : [],
                   )
-                  .concat([...userRoutes, ...planRoutes]),
+                  .concat([...userRoutes]),
               },
               { type: 'divider', key: 'divider-0' },
               ...menus,

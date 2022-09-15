@@ -1,10 +1,7 @@
 import assert from 'assert';
 import Error403 from '../../errors/Error403';
-import Plans from '../../security/plans';
 import Permissions from '../../security/permissions';
 import EmailSender from '../emailSender';
-
-const plans = Plans.values;
 
 /**
  * Checks the Permission of the User on a Tenant.
@@ -40,10 +37,6 @@ export default class PermissionChecker {
       return false;
     }
 
-    if (!this.hasPlanPermission(permission)) {
-      return false;
-    }
-
     return this.hasRolePermission(permission);
   }
 
@@ -73,17 +66,6 @@ export default class PermissionChecker {
       permission.allowedRoles.some(
         (allowedRole) => allowedRole === role,
       ),
-    );
-  }
-
-  /**
-   * Checks if the current company plan allows the permission.
-   */
-  hasPlanPermission(permission) {
-    assert(permission, 'permission is required');
-
-    return permission.allowedPlans.includes(
-      this.currentTenantPlan,
     );
   }
 
@@ -120,18 +102,6 @@ export default class PermissionChecker {
     }
 
     return tenant.roles;
-  }
-
-  /**
-   * Return the current tenant plan,
-   * check also if it's not expired.
-   */
-  get currentTenantPlan() {
-    if (!this.currentTenant || !this.currentTenant.plan) {
-      return plans.free;
-    }
-
-    return this.currentTenant.plan;
   }
 
   /**

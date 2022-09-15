@@ -1,0 +1,30 @@
+export default (app) => {
+  app.post(
+    `/tenant/:tenantId/shelf`,
+    require('./shelfCreate').default,
+  );
+  app.put(
+    `/tenant/:tenantId/shelf/:id`,
+    require('./shelfUpdate').default,
+  );
+  app.post(
+    `/tenant/:tenantId/shelf/import`,
+    require('./shelfImport').default,
+  );
+  app.delete(
+    `/tenant/:tenantId/shelf`,
+    require('./shelfDestroy').default,
+  );
+  app.get(
+    `/tenant/:tenantId/shelf/autocomplete`,
+    require('./shelfAutocomplete').default,
+  );
+  app.get(
+    `/tenant/:tenantId/shelf`,
+    require('./shelfList').default,
+  );
+  app.get(
+    `/tenant/:tenantId/shelf/:id`,
+    require('./shelfFind').default,
+  );
+};

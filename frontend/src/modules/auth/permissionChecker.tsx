@@ -1,7 +1,3 @@
-import Plans from 'src/security/plans';
-
-const plans = Plans.values;
-
 export default class PermissionChecker {
   currentTenant;
   currentUser;
@@ -37,23 +33,7 @@ export default class PermissionChecker {
       return true;
     }
 
-    if (!this.planMatchOneOf(permission.allowedPlans)) {
-      return false;
-    }
-
     return this.rolesMatchOneOf(permission.allowedRoles);
-  }
-
-  lockedForCurrentPlan(permission) {
-    if (!permission) {
-      return false;
-    }
-
-    if (!this.rolesMatchOneOf(permission.allowedRoles)) {
-      return false;
-    }
-
-    return !this.planMatchOneOf(permission.allowedPlans);
   }
 
   rolesMatchOneOf(arg) {
@@ -76,40 +56,6 @@ export default class PermissionChecker {
     }
 
     return this.currentUserRolesIds.includes(arg);
-  }
-
-  planMatchOneOf(arg) {
-    if (!this.currentTenantPlan) {
-      return false;
-    }
-
-    if (!arg) {
-      return false;
-    }
-
-    if (Array.isArray(arg)) {
-      if (!arg.length) {
-        return false;
-      }
-
-      return arg.some(
-        (plan) => plan === this.currentTenantPlan,
-      );
-    }
-
-    return arg === this.currentTenantPlan;
-  }
-
-  get currentTenantPlan() {
-    if (!this.currentTenant) {
-      return plans.free;
-    }
-
-    if (!this.currentTenant.plan) {
-      return plans.free;
-    }
-
-    return this.currentTenant.plan;
   }
 
   get isEmptyTenant() {

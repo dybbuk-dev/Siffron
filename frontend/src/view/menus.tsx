@@ -1,9 +1,6 @@
 import Permissions from 'src/security/permissions';
 import { i18n } from 'src/i18n';
-import config from 'src/config';
 import { Icon } from '@mui/material';
-import StorefrontIcon from '@mui/icons-material/Storefront';
-import InventoryIcon from '@mui/icons-material/Inventory';
 
 const permissions = Permissions.values;
 
@@ -14,13 +11,6 @@ const menus = [
     icon: <Icon fontSize="medium">dashboard</Icon>,
     name: i18n('dashboard.menu'),
     permissionRequired: null,
-  },
-
-  {
-    path: '/organization-profile',
-    name: i18n('entities.organizationProfile.menu'),
-    permissionRequired: permissions.organizationProfileRead,
-    icon: <Icon>business</Icon>,
   },
 
   {
@@ -47,76 +37,6 @@ const menus = [
         permissionRequired: permissions.taskListRead,
         name: i18n('entities.taskList.menu'),
         icon: <Icon>list_alt</Icon>,
-      },
-
-      {
-        path: '/note',
-        permissionRequired: permissions.noteRead,
-        name: i18n('entities.note.menu'),
-        icon: <Icon>note</Icon>,
-      },
-    ],
-  },
-
-  {
-    name: i18n('collapses.vendors.menu'),
-    key: 'vendor-management',
-    icon: <StorefrontIcon fontSize="medium" />,
-    collapse: [
-      {
-        path: '/vendor',
-        permissionRequired: permissions.vendorRead,
-        name: i18n('entities.vendor.menu'),
-        icon: <StorefrontIcon />,
-      },
-
-      {
-        path: '/vendor-category',
-        permissionRequired: permissions.vendorCategoryRead,
-        name: i18n('entities.vendorCategory.menu'),
-        icon: <Icon>category</Icon>,
-      },
-    ],
-  },
-
-  {
-    name: i18n('collapses.risks.menu'),
-    key: 'risk-management',
-    icon: <Icon fontSize="medium">gpp_maybe</Icon>,
-    collapse: [
-      {
-        path: '/risk',
-        permissionRequired: permissions.riskRead,
-        name: i18n('entities.risk.menu'),
-        icon: <Icon>assignment_late</Icon>,
-      },
-
-      {
-        path: '/risk-category',
-        permissionRequired: permissions.riskCategoryRead,
-        name: i18n('entities.riskCategory.menu'),
-        icon: <Icon>crisis_alert</Icon>,
-      },
-    ],
-  },
-
-  {
-    name: i18n('collapses.marketplace.menu'),
-    key: 'marketplace',
-    icon: <Icon fontSize="medium">store_front</Icon>,
-    collapse: [
-      {
-        path: '/product',
-        permissionRequired: permissions.productRead,
-        name: i18n('entities.product.menu'),
-        icon: <InventoryIcon />,
-      },
-
-      {
-        path: '/product-category',
-        permissionRequired: permissions.productCategoryRead,
-        name: i18n('entities.productCategory.menu'),
-        icon: <Icon>category</Icon>,
       },
     ],
   },
@@ -188,21 +108,4 @@ const userRoutes = [
   },
 ].filter(Boolean);
 
-const planRoutes = [
-  config.isPlanEnabled && {
-    path: '/plan',
-    permissionRequired: permissions.planRead,
-    icon: (
-      <Icon fontSize="medium">credit_card_outlined</Icon>
-    ),
-    name: i18n('plan.menu'),
-  },
-].filter(Boolean);
-
-export {
-  menus,
-  profileRoutes,
-  tenantRoutes,
-  userRoutes,
-  planRoutes,
-};
+export { menus, profileRoutes, tenantRoutes, userRoutes };

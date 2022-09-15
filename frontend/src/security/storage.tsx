@@ -10,22 +10,6 @@
 export default class Storage {
   static get values() {
     return {
-      vendorLogo: {
-        id: 'vendorLogo',
-        folder: 'tenant/:tenantId/vendor/logo',
-        maxSizeInBytes: 100 * 1024 * 1024,
-      },
-      vendorContract: {
-        id: 'vendorContract',
-        folder: 'tenant/:tenantId/vendor/contract',
-        maxSizeInBytes: 20971520,
-      },
-      vendorDocumentation: {
-        id: 'vendorDocumentation',
-        folder: 'tenant/:tenantId/vendor/documentation',
-        maxSizeInBytes: 20971520,
-      },
-
       taskAttachments: {
         id: 'taskAttachments',
         folder: 'tenant/:tenantId/task/attachments',

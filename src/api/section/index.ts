@@ -1,0 +1,30 @@
+export default (app) => {
+  app.post(
+    `/tenant/:tenantId/section`,
+    require('./sectionCreate').default,
+  );
+  app.put(
+    `/tenant/:tenantId/section/:id`,
+    require('./sectionUpdate').default,
+  );
+  app.post(
+    `/tenant/:tenantId/section/import`,
+    require('./sectionImport').default,
+  );
+  app.delete(
+    `/tenant/:tenantId/section`,
+    require('./sectionDestroy').default,
+  );
+  app.get(
+    `/tenant/:tenantId/section/autocomplete`,
+    require('./sectionAutocomplete').default,
+  );
+  app.get(
+    `/tenant/:tenantId/section`,
+    require('./sectionList').default,
+  );
+  app.get(
+    `/tenant/:tenantId/section/:id`,
+    require('./sectionFind').default,
+  );
+};

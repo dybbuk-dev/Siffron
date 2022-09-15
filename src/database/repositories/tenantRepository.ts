@@ -5,17 +5,11 @@ import User from '../models/user';
 import Tenant from '../models/tenant';
 import Settings from '../models/settings';
 import Error404 from '../../errors/Error404';
-import Vendor from '../models/vendor';
-import VendorCategory from '../models/vendorCategory';
 import Task from '../models/task';
 import TaskInstance from '../models/taskInstance';
 import TaskPriority from '../models/taskPriority';
 import TaskList from '../models/taskList';
 import Note from '../models/note';
-import Risk from '../models/risk';
-import RiskCategory from '../models/riskCategory';
-import Product from '../models/product';
-import ProductCategory from '../models/productCategory';
 import Error400 from '../../errors/Error400';
 import { v4 as uuid } from 'uuid';
 import { isUserInTenant } from '../utils/userTenantUtils';
@@ -120,13 +114,6 @@ class TenantRepository {
       );
     }
 
-    // Does not allow user to update the plan
-    // only by updating the tenant
-    delete data.plan;
-    delete data.planStripeCustomerId;
-    delete data.planUserId;
-    delete data.planStatus;
-
     await Tenant(options.database).updateOne(
       { _id: id },
       {
@@ -145,76 +132,6 @@ class TenantRepository {
     );
 
     return await this.findById(id, options);
-  }
-
-  /**
-   * Updates the Tenant Plan user.
-   */
-  static async updatePlanUser(
-    id,
-    planStripeCustomerId,
-    planUserId,
-    options: IRepositoryOptions,
-  ) {
-    const currentUser =
-      MongooseRepository.getCurrentUser(options);
-
-    const data = {
-      planStripeCustomerId,
-      planUserId,
-      updatedBy: currentUser.id,
-    };
-
-    await Tenant(options.database).updateOne(
-      { _id: id },
-      data,
-      options,
-    );
-
-    await this._createAuditLog(
-      AuditLogRepository.UPDATE,
-      id,
-      data,
-      options,
-    );
-
-    return await this.findById(id, options);
-  }
-
-  static async updatePlanStatus(
-    planStripeCustomerId,
-    plan,
-    planStatus,
-    options: IRepositoryOptions,
-  ) {
-    const data = {
-      plan,
-      planStatus,
-      updatedBy: null,
-    };
-
-    const record =
-      await MongooseRepository.wrapWithSessionIfExists(
-        Tenant(options.database).findOne({
-          planStripeCustomerId,
-        }),
-        options,
-      );
-
-    await Tenant(options.database).updateOne(
-      { _id: record.id },
-      data,
-      options,
-    );
-
-    await this._createAuditLog(
-      AuditLogRepository.UPDATE,
-      record.id,
-      data,
-      options,
-    );
-
-    return await this.findById(record.id, options);
   }
 
   static async destroy(id, options: IRepositoryOptions) {
@@ -243,16 +160,6 @@ class TenantRepository {
       options,
     );
 
-    await Vendor(options.database).deleteMany(
-      { tenant: id },
-      options,
-    );
-
-    await VendorCategory(options.database).deleteMany(
-      { tenant: id },
-      options,
-    );
-
     await Task(options.database).deleteMany(
       { tenant: id },
       options,
@@ -274,26 +181,6 @@ class TenantRepository {
     );
 
     await Note(options.database).deleteMany(
-      { tenant: id },
-      options,
-    );
-
-    await Risk(options.database).deleteMany(
-      { tenant: id },
-      options,
-    );
-
-    await RiskCategory(options.database).deleteMany(
-      { tenant: id },
-      options,
-    );
-
-    await Product(options.database).deleteMany(
-      { tenant: id },
-      options,
-    );
-
-    await ProductCategory(options.database).deleteMany(
       { tenant: id },
       options,
     );

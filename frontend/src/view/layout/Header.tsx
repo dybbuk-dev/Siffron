@@ -7,7 +7,6 @@ import { useLocation } from 'react-router-dom';
 import AppBar from '@mui/material/AppBar';
 import Toolbar from '@mui/material/Toolbar';
 import IconButton from '@mui/material/IconButton';
-import Menu from '@mui/material/Menu';
 import Icon from '@mui/material/Icon';
 
 // Material Dashboard 2 PRO React TS components
@@ -17,7 +16,6 @@ import MDBadge from 'src/mui/components/MDBadge';
 
 // Material Dashboard 2 PRO React TS examples components
 import Breadcrumbs from 'src/mui/examples/Breadcrumbs';
-import NotificationItem from 'src/mui/examples/Items/NotificationItem';
 
 // Custom styles for Header
 import {
@@ -113,35 +111,6 @@ function Header({
   };
   const handleOpenMenu = (event: any) =>
     setOpenMenu(event.currentTarget);
-  const handleCloseMenu = () => setOpenMenu(false);
-
-  // Render the notifications menu
-  const renderMenu = () => (
-    <Menu
-      anchorEl={openMenu}
-      anchorReference={null}
-      anchorOrigin={{
-        vertical: 'bottom',
-        horizontal: 'left',
-      }}
-      open={Boolean(openMenu)}
-      onClose={handleCloseMenu}
-      sx={{ mt: 2 }}
-    >
-      <NotificationItem
-        icon={<Icon>email</Icon>}
-        title="Check new messages"
-      />
-      <NotificationItem
-        icon={<Icon>podcasts</Icon>}
-        title="Manage Podcast sessions"
-      />
-      <NotificationItem
-        icon={<Icon>shopping_cart</Icon>}
-        title="Payment successfully completed"
-      />
-    </Menu>
-  );
 
   // Styles for the navbar icons
   const iconsStyle = ({
@@ -230,23 +199,6 @@ function Header({
               >
                 <Icon sx={iconsStyle}>settings</Icon>
               </IconButton>
-              <IconButton
-                size="small"
-                color="inherit"
-                sx={navbarIconButton}
-                onClick={handleOpenMenu}
-                disableRipple
-              >
-                <MDBadge
-                  badgeContent={9}
-                  color="error"
-                  size="xs"
-                  circular
-                >
-                  <Icon sx={iconsStyle}>notifications</Icon>
-                </MDBadge>
-              </IconButton>
-              {renderMenu()}
             </MDBox>
           </MDBox>
         )}

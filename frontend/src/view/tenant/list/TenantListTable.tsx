@@ -27,7 +27,6 @@ import Pagination from 'src/view/shared/table/Pagination';
 import authActions from 'src/modules/auth/authActions';
 import invitationActions from 'src/modules/tenant/invitation/tenantInvitationActions';
 import ColoredChip from 'src/view/shared/ColoredChip';
-import Plans from 'src/security/plans';
 import config from 'src/config';
 import { tenantSubdomain } from 'src/modules/tenant/tenantSubdomain';
 
@@ -140,11 +139,6 @@ function TenantListTable() {
               {tenantSubdomain.isEnabled && (
                 <DataTableHeadCell sorted={false}>
                   {i18n('tenant.fields.url')}
-                </DataTableHeadCell>
-              )}
-              {config.isPlanEnabled && (
-                <DataTableHeadCell sorted={false}>
-                  {i18n('tenant.fields.plan')}
                 </DataTableHeadCell>
               )}
             </TableRow>
@@ -280,20 +274,6 @@ function TenantListTable() {
                   </DataTableBodyCell>
                   {tenantSubdomain.isEnabled && (
                     <DataTableBodyCell>{`${row.url}.${config.frontendUrl.host}`}</DataTableBodyCell>
-                  )}
-                  {config.isPlanEnabled && (
-                    <DataTableBodyCell>
-                      <ColoredChip
-                        label={i18n(
-                          `plan.${row.plan}.label`,
-                        )}
-                        color={
-                          row.plan === Plans.values.free
-                            ? 'green'
-                            : 'yellow'
-                        }
-                      />
-                    </DataTableBodyCell>
                   )}
                 </TableRow>
               ))}

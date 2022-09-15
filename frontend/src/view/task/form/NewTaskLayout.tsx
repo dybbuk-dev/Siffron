@@ -5,7 +5,6 @@ import DatePickerFormItem from 'src/view/shared/form/items/DatePickerFormItem';
 import Storage from 'src/security/storage';
 import FilesFormItem from 'src/view/shared/form/items/FilesFormItem';
 import TaskListAutocompleteFormItem from 'src/view/taskList/autocomplete/TaskListAutocompleteFormItem';
-import NoteAutocompleteFormItem from 'src/view/note/autocomplete/NoteAutocompleteFormItem';
 import TaskPriorityAutocompleteFormItem from 'src/view/taskPriority/autocomplete/TaskPriorityAutocompleteFormItem';
 import { Grid } from '@mui/material';
 import { i18n } from 'src/i18n';
@@ -167,17 +166,6 @@ function NewTaskLayout(props) {
         </Grid>
         {!hiddenImpossibleFields && (
           <>
-            <Grid item lg={6} md={6} sm={12} xs={12}>
-              <NoteAutocompleteFormItem
-                name="notes"
-                label={i18n('entities.task.fields.notes')}
-                required={false}
-                showCreate={true}
-                mode="multiple"
-                variant="standard"
-                fullWidth
-              />
-            </Grid>
             <Grid item lg={6} md={6} sm={12} xs={12}>
               <DatePickerFormItem
                 name="completedDate"

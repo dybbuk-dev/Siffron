@@ -20,17 +20,9 @@ const frontendUrl = {
  */
 const tenantMode = 'multi-with-subdomain';
 
-/**
- * Plan payments configuration.
- */
-const isPlanEnabled = true;
-const stripePublishableKey = '';
-
 export default {
   frontendUrl,
   backendUrl,
   apiDocumentationUrl,
   tenantMode,
-  isPlanEnabled,
-  stripePublishableKey,
 };

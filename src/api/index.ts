@@ -66,11 +66,6 @@ app.use(
   bodyParser.json({
     verify: function (req, res, buf) {
       const url = (<any>req).originalUrl;
-      if (url.startsWith('/api/plan/stripe/webhook')) {
-        // Stripe Webhook needs the body raw in order
-        // to validate the request
-        (<any>req).rawBody = buf.toString();
-      }
     },
   }),
 );
@@ -86,23 +81,15 @@ require('./schedule').default(routes);
 require('./mui').default(routes);
 require('./auditLog').default(routes);
 require('./auth').default(routes);
-require('./plan').default(routes);
 require('./tenant').default(routes);
 require('./file').default(routes);
 require('./user').default(routes);
 require('./settings').default(routes);
-require('./vendor').default(routes);
-require('./vendorCategory').default(routes);
 require('./task').default(routes);
 require('./taskInstance').default(routes);
 require('./taskPriority').default(routes);
 require('./taskList').default(routes);
 require('./note').default(routes);
-require('./risk').default(routes);
-require('./riskCategory').default(routes);
-require('./product').default(routes);
-require('./productCategory').default(routes);
-require('./organizationProfile').default(routes);
 
 // Loads the Tenant if the :tenantId param is passed
 routes.param('tenantId', tenantMiddleware);

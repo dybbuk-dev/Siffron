@@ -30,32 +30,10 @@ export default class Storage {
         maxSizeInBytes: 10 * 1024 * 1024,
         publicRead: true,
       },
-      vendorLogo: {
-        id: 'vendorLogo',
-        folder: 'tenant/:tenantId/vendor/logo',
-        maxSizeInBytes: 100 * 1024 * 1024,
-      },
-      vendorContract: {
-        id: 'vendorContract',
-        folder: 'tenant/:tenantId/vendor/contract',
-        maxSizeInBytes: 20971520,
-      },
-      vendorDocumentation: {
-        id: 'vendorDocumentation',
-        folder: 'tenant/:tenantId/vendor/documentation',
-        maxSizeInBytes: 20971520,
-      },
-
       taskAttachments: {
         id: 'taskAttachments',
         folder: 'tenant/:tenantId/task/attachments',
         maxSizeInBytes: 20971520,
-      },
-
-      productLogo: {
-        id: 'productLogo',
-        folder: 'tenant/:tenantId/product/logo',
-        maxSizeInBytes: 5242880,
       },
     };
   }

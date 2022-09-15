@@ -4,7 +4,6 @@ import Error400 from '../../errors/Error400';
 import MongooseRepository from '../../database/repositories/mongooseRepository';
 import UserRepository from '../../database/repositories/userRepository';
 import TenantUserRepository from '../../database/repositories/tenantUserRepository';
-import Plans from '../../security/plans';
 import { IServiceOptions } from '../IServiceOptions';
 
 export default class UserEditor {
@@ -78,30 +77,6 @@ export default class UserEditor {
   }
 
   /**
-   * Checks if the user is removing the responsable for the plan
-   */
-  async _isRemovingPlanUser() {
-    if (this._roles.includes(Roles.values.admin)) {
-      return false;
-    }
-
-    const currentTenant = this.options.currentTenant;
-
-    if (currentTenant.plan === Plans.values.free) {
-      return false;
-    }
-
-    if (!currentTenant.planUserId) {
-      return false;
-    }
-
-    return (
-      String(this.data.id) ===
-      String(currentTenant.planUserId)
-    );
-  }
-
-  /**
    * Checks if the user is removing it's own admin role
    */
   async _isRemovingOwnAdminRole() {
@@ -147,13 +122,6 @@ export default class UserEditor {
 
     assert(this.data.id, 'id is required');
     assert(this._roles, 'roles is required (can be empty)');
-
-    if (await this._isRemovingPlanUser()) {
-      throw new Error400(
-        this.options.language,
-        'user.errors.revokingPlanUser',
-      );
-    }
 
     if (await this._isRemovingOwnAdminRole()) {
       throw new Error400(

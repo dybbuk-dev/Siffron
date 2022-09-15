@@ -9,7 +9,6 @@ import { getConfig } from '../config';
 import Roles from '../security/roles';
 import SettingsService from './settingsService';
 import UserRepository from '../database/repositories/userRepository';
-import Plans from '../security/plans';
 import { IServiceOptions } from './IServiceOptions';
 
 export default class TenantService {
@@ -274,71 +273,6 @@ export default class TenantService {
     }
   }
 
-  async updatePlanUser(
-    id,
-    planStripeCustomerId,
-    planUserId,
-  ) {
-    const session = await MongooseRepository.createSession(
-      this.options.database,
-    );
-
-    try {
-      await TenantRepository.updatePlanUser(
-        id,
-        planStripeCustomerId,
-        planUserId,
-        {
-          ...this.options,
-          session,
-          currentTenant: { id },
-          bypassPermissionValidation: true,
-        },
-      );
-
-      await MongooseRepository.commitTransaction(session);
-    } catch (error) {
-      await MongooseRepository.abortTransaction(session);
-      throw error;
-    }
-  }
-
-  async updatePlanToFree(planStripeCustomerId) {
-    return this.updatePlanStatus(
-      planStripeCustomerId,
-      Plans.values.free,
-      'active',
-    );
-  }
-
-  async updatePlanStatus(
-    planStripeCustomerId,
-    plan,
-    planStatus,
-  ) {
-    const session = await MongooseRepository.createSession(
-      this.options.database,
-    );
-
-    try {
-      await TenantRepository.updatePlanStatus(
-        planStripeCustomerId,
-        plan,
-        planStatus,
-        {
-          ...this.options,
-          session,
-          bypassPermissionValidation: true,
-        },
-      );
-
-      await MongooseRepository.commitTransaction(session);
-    } catch (error) {
-      await MongooseRepository.abortTransaction(session);
-      throw error;
-    }
-  }
-
   async destroyAll(ids) {
     const session = await MongooseRepository.createSession(
       this.options.database,
@@ -356,18 +290,6 @@ export default class TenantService {
           ...this.options,
           currentTenant: tenant,
         }).validateHas(Permissions.values.tenantDestroy);
-
-        if (
-          !Plans.allowTenantDestroy(
-            tenant.plan,
-            tenant.planStatus,
-          )
-        ) {
-          throw new Error400(
-            this.options.language,
-            'tenant.planActive',
-          );
-        }
 
         await TenantRepository.destroy(id, {
           ...this.options,

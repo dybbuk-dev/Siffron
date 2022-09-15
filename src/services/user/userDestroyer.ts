@@ -3,7 +3,6 @@ import UserRepository from '../../database/repositories/userRepository';
 import TenantUserRepository from '../../database/repositories/tenantUserRepository';
 import assert from 'assert';
 import Error400 from '../../errors/Error400';
-import Plans from '../../security/plans';
 import { IServiceOptions } from '../IServiceOptions';
 
 export default class UserDestroyer {
@@ -67,25 +66,6 @@ export default class UserDestroyer {
   }
 
   /**
-   * Checks if the user is removing the responsable for the plan
-   */
-  async _isRemovingPlanUser() {
-    const currentTenant = this.options.currentTenant;
-
-    if (currentTenant.plan === Plans.values.free) {
-      return false;
-    }
-
-    if (!currentTenant.planUserId) {
-      return false;
-    }
-
-    return this._ids.includes(
-      String(currentTenant.planUserId),
-    );
-  }
-
-  /**
    * Checks if the user is removing himself
    */
   _isRemovingHimself() {
@@ -115,13 +95,6 @@ export default class UserDestroyer {
       this._ids && this._ids.length,
       'ids is required',
     );
-
-    if (await this._isRemovingPlanUser()) {
-      throw new Error400(
-        this.options.language,
-        'user.errors.destroyingPlanUser',
-      );
-    }
 
     if (this._isRemovingHimself()) {
       throw new Error400(

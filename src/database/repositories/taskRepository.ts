@@ -7,10 +7,7 @@ import lodash from 'lodash';
 import Task from '../models/task';
 import UserRepository from './userRepository';
 import FileRepository from './fileRepository';
-import Vendor from '../models/vendor';
-import Risk from '../models/risk';
 import TaskInstance from '../models/taskInstance';
-import Error400 from '../../errors/Error400';
 import TaskInstanceRepository from './taskInstanceRepository';
 import TaskInstanceRepositoryEx from './extend/taskInstanceRepositoryEx';
 
@@ -104,40 +101,6 @@ class TaskRepository {
       throw new Error404();
     }
 
-    let vendors =
-      await MongooseRepository.wrapWithSessionIfExists(
-        Vendor(options.database).countDocuments({
-          tasks: id,
-          tenant: currentTenant.id,
-        }),
-        options,
-      );
-
-    if (vendors) {
-      throw new Error400(
-        currentTenant.language,
-        'errors.inUse.message',
-        record.reference,
-      );
-    }
-
-    let risks =
-      await MongooseRepository.wrapWithSessionIfExists(
-        Risk(options.database).countDocuments({
-          tasks: id,
-          tenant: currentTenant.id,
-        }),
-        options,
-      );
-
-    if (risks) {
-      throw new Error400(
-        currentTenant.language,
-        'errors.inUse.message',
-        record.reference,
-      );
-    }
-
     await Task(options.database).deleteOne(
       { _id: id },
       options,
@@ -147,20 +110,6 @@ class TaskRepository {
       AuditLogRepository.DELETE,
       id,
       record,
-      options,
-    );
-
-    await MongooseRepository.destroyRelationToMany(
-      id,
-      Vendor(options.database),
-      'tasks',
-      options,
-    );
-
-    await MongooseRepository.destroyRelationToMany(
-      id,
-      Risk(options.database),
-      'tasks',
       options,
     );
 

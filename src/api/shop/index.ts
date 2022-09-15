@@ -1,0 +1,30 @@
+export default (app) => {
+  app.post(
+    `/tenant/:tenantId/shop`,
+    require('./shopCreate').default,
+  );
+  app.put(
+    `/tenant/:tenantId/shop/:id`,
+    require('./shopUpdate').default,
+  );
+  app.post(
+    `/tenant/:tenantId/shop/import`,
+    require('./shopImport').default,
+  );
+  app.delete(
+    `/tenant/:tenantId/shop`,
+    require('./shopDestroy').default,
+  );
+  app.get(
+    `/tenant/:tenantId/shop/autocomplete`,
+    require('./shopAutocomplete').default,
+  );
+  app.get(
+    `/tenant/:tenantId/shop`,
+    require('./shopList').default,
+  );
+  app.get(
+    `/tenant/:tenantId/shop/:id`,
+    require('./shopFind').default,
+  );
+};

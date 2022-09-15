@@ -5,7 +5,6 @@ import UserViewItem from 'src/view/user/view/UserViewItem';
 import moment from 'moment';
 import FilesViewItem from 'src/view/shared/view/FilesViewItem';
 import TaskListViewItem from 'src/view/taskList/view/TaskListViewItem';
-import NoteViewItem from 'src/view/note/view/NoteViewItem';
 import TaskPriorityViewItem from 'src/view/taskPriority/view/TaskPriorityViewItem';
 import { Grid } from '@mui/material';
 import MDTypography from 'src/mui/components/MDTypography';
@@ -140,13 +139,6 @@ function TaskView(props) {
               <MDTypography variant="h5">
                 {i18n('entities.task.fields.notes')}
               </MDTypography>
-            </Grid>
-            <Grid item xs={12}>
-              <NoteViewItem
-                label={i18n('entities.task.fields.notes')}
-                value={record.notes}
-                hiddenLabel
-              />
             </Grid>
             <Grid item xs={12}>
               <MDTypography variant="h5" mt={3}>

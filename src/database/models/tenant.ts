@@ -1,7 +1,5 @@
 import mongoose from 'mongoose';
-import Plans from '../../security/plans';
 
-const plans = Plans.values;
 const Schema = mongoose.Schema;
 
 export default (database) => {
@@ -19,24 +17,6 @@ export default (database) => {
         maxlength: 255,
       },
       url: { type: String, maxlength: 1024 },
-      plan: {
-        type: String,
-        required: true,
-        enum: [plans.free, plans.growth, plans.enterprise],
-        default: plans.free,
-      },
-      planStatus: {
-        type: String,
-        required: true,
-        enum: ['active', 'cancel_at_period_end', 'error'],
-        default: 'active',
-      },
-      planStripeCustomerId: {
-        type: String,
-      },
-      planUserId: {
-        type: String,
-      },
       createdBy: {
         type: Schema.Types.ObjectId,
         ref: 'user',

@@ -10,7 +10,7 @@ const apiDocumentationUrl = `/documentation`;
  * Frontend URL.
  */
 const frontendUrl = {
-  host: 'vorgrc.com',
+  host: 'siffron.com',
   protocol: 'https',
 };
 
@@ -22,17 +22,9 @@ const frontendUrl = {
  */
 const tenantMode = 'multi-with-subdomain';
 
-/**
- * Plan payments configuration.
- */
-const isPlanEnabled = true;
-const stripePublishableKey = '';
-
 export default {
   frontendUrl,
   backendUrl,
   apiDocumentationUrl,
   tenantMode,
-  isPlanEnabled,
-  stripePublishableKey,
 };

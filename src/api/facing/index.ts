@@ -1,0 +1,30 @@
+export default (app) => {
+  app.post(
+    `/tenant/:tenantId/facing`,
+    require('./facingCreate').default,
+  );
+  app.put(
+    `/tenant/:tenantId/facing/:id`,
+    require('./facingUpdate').default,
+  );
+  app.post(
+    `/tenant/:tenantId/facing/import`,
+    require('./facingImport').default,
+  );
+  app.delete(
+    `/tenant/:tenantId/facing`,
+    require('./facingDestroy').default,
+  );
+  app.get(
+    `/tenant/:tenantId/facing/autocomplete`,
+    require('./facingAutocomplete').default,
+  );
+  app.get(
+    `/tenant/:tenantId/facing`,
+    require('./facingList').default,
+  );
+  app.get(
+    `/tenant/:tenantId/facing/:id`,
+    require('./facingFind').default,
+  );
+};

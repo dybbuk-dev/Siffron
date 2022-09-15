@@ -13,8 +13,6 @@
     "build:documentation": "copyfiles --flat ./src/documentation/openapi.json ./dist/documentation/",
     "build": "tsc && npm run build:documentation",
     "db:create": "npm run build && node ./dist/database/migrations/create",
-    "stripe:login": "stripe login",
-    "stripe:start": "stripe listen --forward-to localhost:8080/api/plan/stripe/webhook",
     "heroku-postbuild": "npm run db:create && cd frontend && yarn && npm run build:production"
   },
   "dependencies": {

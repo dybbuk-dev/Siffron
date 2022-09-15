@@ -1,6 +1,5 @@
 import MongooseRepository from './mongooseRepository';
 import MUI from '../models/mui';
-import AuditLogRepository from './auditLogRepository';
 import { IRepositoryOptions } from './IRepositoryOptions';
 
 export default class MuiRepository {
