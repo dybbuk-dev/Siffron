@@ -7,6 +7,7 @@ import auditLog from 'src/modules/auditLog/auditLogReducers';
 import settings from 'src/modules/settings/settingsReducers';
 import shop from 'src/modules/shop/shopReducers';
 import department from 'src/modules/department/departmentReducers';
+import section from 'src/modules/section/sectionReducers';
 import task from 'src/modules/task/taskReducers';
 import taskPriority from 'src/modules/taskPriority/taskPriorityReducers';
 import taskList from 'src/modules/taskList/taskListReducers';
@@ -25,6 +26,7 @@ export default (history) =>
     auth,
     shop,
     department,
+    section,
     tenant,
     user,
     auditLog,

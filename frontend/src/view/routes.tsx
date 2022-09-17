@@ -294,10 +294,10 @@ const privateRoutes = [
     permissionRequired: permissions.departmentRead,
     exact: true,
   },
-  /*
+
   {
     path: '/section',
-    collapseName: 'sections',
+    collapseName: 'managements',
     i18n: 'entities.section.menu',
     parent: '/management',
     loader: () =>
@@ -308,7 +308,7 @@ const privateRoutes = [
 
   {
     path: '/section/new',
-    collapseName: 'sections',
+    collapseName: 'managements',
     i18n: 'entities.section.new.title',
     parent: '/section',
     loader: () =>
@@ -319,7 +319,7 @@ const privateRoutes = [
 
   {
     path: '/section/importer',
-    collapseName: 'sections',
+    collapseName: 'managements',
     i18n: 'entities.section.importer.title',
     parent: '/section',
     loader: () =>
@@ -332,7 +332,7 @@ const privateRoutes = [
 
   {
     path: '/section/:id/edit',
-    collapseName: 'sections',
+    collapseName: 'managements',
     i18n: 'entities.section.edit.title',
     parent: '/section',
     loader: () =>
@@ -343,7 +343,7 @@ const privateRoutes = [
 
   {
     path: '/section/:id',
-    collapseName: 'sections',
+    collapseName: 'managements',
     i18n: 'entities.section.view.title',
     parent: '/section',
     loader: () =>
@@ -351,7 +351,7 @@ const privateRoutes = [
     permissionRequired: permissions.sectionRead,
     exact: true,
   },
-
+  /*
   {
     path: '/shelf',
     collapseName: 'shelfs',

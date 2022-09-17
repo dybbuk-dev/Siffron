@@ -4,25 +4,25 @@ import exporterRenders from 'src/modules/shared/exporter/exporterRenders';
 export default [
   {
     name: 'id',
-    label: i18n('entities.department.fields.id'),
+    label: i18n('entities.section.fields.id'),
   },
   {
     name: 'name',
-    label: i18n('entities.department.fields.name'),
+    label: i18n('entities.section.fields.name'),
   },
   {
-    name: 'shop',
-    label: i18n('entities.department.fields.shop'),
+    name: 'department',
+    label: i18n('entities.section.fields.department'),
     render: exporterRenders.relationToOne(),
   },
   {
     name: 'createdAt',
-    label: i18n('entities.department.fields.createdAt'),
+    label: i18n('entities.section.fields.createdAt'),
     render: exporterRenders.datetime(),
   },
   {
     name: 'updatedAt',
-    label: i18n('entities.department.fields.updatedAt'),
+    label: i18n('entities.section.fields.updatedAt'),
     render: exporterRenders.datetime(),
   },
 ];
