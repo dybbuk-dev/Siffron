@@ -42,6 +42,48 @@ const menus = [
   },
 
   {
+    name: i18n('collapses.management.menu'),
+    key: 'managements',
+    icon: <Icon fontSize="medium">poll</Icon>,
+    collapse: [
+      {
+        path: '/shop',
+        permissionRequired: permissions.shopRead,
+        name: i18n('entities.shop.menu'),
+        icon: <Icon>store</Icon>,
+      },
+
+      {
+        path: '/department',
+        permissionRequired: permissions.departmentRead,
+        name: i18n('entities.department.menu'),
+        icon: <Icon>view_comfy</Icon>,
+      },
+
+      {
+        path: '/section',
+        permissionRequired: permissions.sectionRead,
+        name: i18n('entities.section.menu'),
+        icon: <Icon>window</Icon>,
+      },
+
+      {
+        path: '/shelf',
+        permissionRequired: permissions.shelfRead,
+        name: i18n('entities.shelf.menu'),
+        icon: <Icon>web_stories</Icon>,
+      },
+
+      {
+        path: '/facing',
+        permissionRequired: permissions.facingRead,
+        name: i18n('entities.facing.menu'),
+        icon: <Icon>inventory</Icon>,
+      },
+    ],
+  },
+
+  {
     name: i18n('collapses.reports.menu'),
     key: 'reports',
     icon: <Icon fontSize="medium">assessment</Icon>,

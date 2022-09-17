@@ -2,6 +2,8 @@ import { createSelector } from 'reselect';
 
 const selectRaw = (state) => state.task.list;
 
+console.log(selectRaw);
+
 const selectLoading = createSelector(
   [selectRaw],
   (raw) => raw.loading,

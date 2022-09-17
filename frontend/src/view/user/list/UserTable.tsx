@@ -251,7 +251,6 @@ function UserTable() {
                         badgeContent={Roles.labelOf(roleId)}
                         color={sidenavColor}
                         variant="contained"
-                        container
                       />
                     ))}
                   </DataTableBodyCell>

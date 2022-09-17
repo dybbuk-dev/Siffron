@@ -178,6 +178,291 @@ const privateRoutes = [
   },
 
   {
+    path: '/management',
+    collapseName: 'managements',
+    i18n: 'collapses.management.menu',
+    parent: '/',
+    redirect: '/shop',
+    permissionRequired: null,
+    virtual: true,
+  },
+
+  {
+    path: '/shop',
+    collapseName: 'managements',
+    i18n: 'entities.shop.menu',
+    parent: '/management',
+    loader: () => import('src/view/shop/list/ShopListPage'),
+    permissionRequired: permissions.shopRead,
+    exact: true,
+  },
+
+  {
+    path: '/shop/new',
+    collapseName: 'managements',
+    i18n: 'entities.shop.new.title',
+    parent: '/shop',
+    loader: () => import('src/view/shop/form/ShopFormPage'),
+    permissionRequired: permissions.shopCreate,
+    exact: true,
+  },
+
+  {
+    path: '/shop/importer',
+    collapseName: 'managements',
+    i18n: 'entities.shop.importer.title',
+    parent: '/shop',
+    loader: () =>
+      import('src/view/shop/importer/ShopImporterPage'),
+    permissionRequired: permissions.shopImport,
+    exact: true,
+  },
+
+  {
+    path: '/shop/:id/edit',
+    collapseName: 'managements',
+    i18n: 'entities.shop.edit.title',
+    parent: '/shop',
+    loader: () => import('src/view/shop/form/ShopFormPage'),
+    permissionRequired: permissions.shopEdit,
+    exact: true,
+  },
+
+  {
+    path: '/shop/:id',
+    collapseName: 'managements',
+    i18n: 'entities.shop.view.title',
+    parent: '/shop',
+    loader: () => import('src/view/shop/view/ShopViewPage'),
+    permissionRequired: permissions.shopRead,
+    exact: true,
+  },
+
+  {
+    path: '/department',
+    collapseName: 'managements',
+    i18n: 'entities.department.menu',
+    parent: '/management',
+    loader: () =>
+      import('src/view/department/list/DepartmentListPage'),
+    permissionRequired: permissions.departmentRead,
+    exact: true,
+  },
+
+  {
+    path: '/department/new',
+    collapseName: 'managements',
+    i18n: 'entities.department.new.title',
+    parent: '/department',
+    loader: () =>
+      import('src/view/department/form/DepartmentFormPage'),
+    permissionRequired: permissions.departmentCreate,
+    exact: true,
+  },
+
+  {
+    path: '/department/importer',
+    collapseName: 'managements',
+    i18n: 'entities.department.importer.title',
+    parent: '/department',
+    loader: () =>
+      import(
+        'src/view/department/importer/DepartmentImporterPage'
+      ),
+    permissionRequired: permissions.departmentImport,
+    exact: true,
+  },
+
+  {
+    path: '/department/:id/edit',
+    collapseName: 'managements',
+    i18n: 'entities.department.edit.title',
+    parent: '/department',
+    loader: () =>
+      import('src/view/department/form/DepartmentFormPage'),
+    permissionRequired: permissions.departmentEdit,
+    exact: true,
+  },
+
+  {
+    path: '/department/:id',
+    collapseName: 'managements',
+    i18n: 'entities.department.view.title',
+    parent: '/department',
+    loader: () =>
+      import('src/view/department/view/DepartmentViewPage'),
+    permissionRequired: permissions.departmentRead,
+    exact: true,
+  },
+  /*
+  {
+    path: '/section',
+    collapseName: 'sections',
+    i18n: 'entities.section.menu',
+    parent: '/management',
+    loader: () =>
+      import('src/view/section/list/SectionListPage'),
+    permissionRequired: permissions.sectionRead,
+    exact: true,
+  },
+
+  {
+    path: '/section/new',
+    collapseName: 'sections',
+    i18n: 'entities.section.new.title',
+    parent: '/section',
+    loader: () =>
+      import('src/view/section/form/SectionFormPage'),
+    permissionRequired: permissions.sectionCreate,
+    exact: true,
+  },
+
+  {
+    path: '/section/importer',
+    collapseName: 'sections',
+    i18n: 'entities.section.importer.title',
+    parent: '/section',
+    loader: () =>
+      import(
+        'src/view/section/importer/SectionImporterPage'
+      ),
+    permissionRequired: permissions.sectionImport,
+    exact: true,
+  },
+
+  {
+    path: '/section/:id/edit',
+    collapseName: 'sections',
+    i18n: 'entities.section.edit.title',
+    parent: '/section',
+    loader: () =>
+      import('src/view/section/form/SectionFormPage'),
+    permissionRequired: permissions.sectionEdit,
+    exact: true,
+  },
+
+  {
+    path: '/section/:id',
+    collapseName: 'sections',
+    i18n: 'entities.section.view.title',
+    parent: '/section',
+    loader: () =>
+      import('src/view/section/view/SectionViewPage'),
+    permissionRequired: permissions.sectionRead,
+    exact: true,
+  },
+
+  {
+    path: '/shelf',
+    collapseName: 'shelfs',
+    i18n: 'entities.shelf.menu',
+    parent: '/management',
+    loader: () =>
+      import('src/view/shelf/list/ShelfListPage'),
+    permissionRequired: permissions.shelfRead,
+    exact: true,
+  },
+
+  {
+    path: '/shelf/new',
+    collapseName: 'shelfs',
+    i18n: 'entities.shelf.new.title',
+    parent: '/shelf',
+    loader: () =>
+      import('src/view/shelf/form/ShelfFormPage'),
+    permissionRequired: permissions.shelfCreate,
+    exact: true,
+  },
+
+  {
+    path: '/shelf/importer',
+    collapseName: 'shelfs',
+    i18n: 'entities.shelf.importer.title',
+    parent: '/shelf',
+    loader: () =>
+      import('src/view/shelf/importer/ShelfImporterPage'),
+    permissionRequired: permissions.shelfImport,
+    exact: true,
+  },
+
+  {
+    path: '/shelf/:id/edit',
+    collapseName: 'shelfs',
+    i18n: 'entities.shelf.edit.title',
+    parent: '/shelf',
+    loader: () =>
+      import('src/view/shelf/form/ShelfFormPage'),
+    permissionRequired: permissions.shelfEdit,
+    exact: true,
+  },
+
+  {
+    path: '/shelf/:id',
+    collapseName: 'shelfs',
+    i18n: 'entities.shelf.view.title',
+    parent: '/shelf',
+    loader: () =>
+      import('src/view/shelf/view/ShelfViewPage'),
+    permissionRequired: permissions.shelfRead,
+    exact: true,
+  },
+
+  {
+    path: '/facing',
+    collapseName: 'facings',
+    i18n: 'entities.facing.menu',
+    parent: '/management',
+    loader: () =>
+      import('src/view/facing/list/FacingListPage'),
+    permissionRequired: permissions.facingRead,
+    exact: true,
+  },
+
+  {
+    path: '/facing/new',
+    collapseName: 'facings',
+    i18n: 'entities.facing.new.title',
+    parent: '/facing',
+    loader: () =>
+      import('src/view/facing/form/FacingFormPage'),
+    permissionRequired: permissions.facingCreate,
+    exact: true,
+  },
+
+  {
+    path: '/facing/importer',
+    collapseName: 'facings',
+    i18n: 'entities.facing.importer.title',
+    parent: '/facing',
+    loader: () =>
+      import('src/view/facing/importer/FacingImporterPage'),
+    permissionRequired: permissions.facingImport,
+    exact: true,
+  },
+
+  {
+    path: '/facing/:id/edit',
+    collapseName: 'facings',
+    i18n: 'entities.facing.edit.title',
+    parent: '/facing',
+    loader: () =>
+      import('src/view/facing/form/FacingFormPage'),
+    permissionRequired: permissions.facingEdit,
+    exact: true,
+  },
+
+  {
+    path: '/facing/:id',
+    collapseName: 'facings',
+    i18n: 'entities.facing.view.title',
+    parent: '/facing',
+    loader: () =>
+      import('src/view/facing/view/FacingViewPage'),
+    permissionRequired: permissions.facingRead,
+    exact: true,
+  },*/
+
+  {
     path: '/tasks-breadcrumb',
     collapseName: 'tasks',
     i18n: 'collapses.tasks.menu',

@@ -31,7 +31,7 @@ function UserNewFormModal(props) {
         1,
         0,
       );
-
+      setSaveLoading(false);
       props.onSuccess(rows[0]);
     } catch (error) {
       Errors.handle(error);
