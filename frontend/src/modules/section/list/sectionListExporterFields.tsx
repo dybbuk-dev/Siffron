@@ -13,7 +13,7 @@ export default [
   {
     name: 'department',
     label: i18n('entities.section.fields.department'),
-    render: exporterRenders.relationToOne(),
+    render: exporterRenders.relationToOne('name'),
   },
   {
     name: 'createdAt',
