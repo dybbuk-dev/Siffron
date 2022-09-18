@@ -2,17 +2,19 @@ import React, { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { i18n } from 'src/i18n';
-import shelfSelectors from 'src/modules/shelf/shelfSelectors';
-import destroyActions from 'src/modules/shelf/destroy/shelfDestroyActions';
-import destroySelectors from 'src/modules/shelf/destroy/shelfDestroySelectors';
-import actions from 'src/modules/shelf/list/shelfListActions';
-import selectors from 'src/modules/shelf/list/shelfListSelectors';
+import facingSelectors from 'src/modules/facing/facingSelectors';
+import destroyActions from 'src/modules/facing/destroy/facingDestroyActions';
+import destroySelectors from 'src/modules/facing/destroy/facingDestroySelectors';
+import actions from 'src/modules/facing/list/facingListActions';
+import selectors from 'src/modules/facing/list/facingListSelectors';
 import ConfirmModal from 'src/view/shared/modals/ConfirmModal';
 import Pagination from 'src/view/shared/table/Pagination';
 import Spinner from 'src/view/shared/Spinner';
 import ShopListItem from 'src/view/shop/list/ShopListItem';
 import DepartmentListItem from 'src/view/department/list/DepartmentListItem';
 import SectionListItem from 'src/view/section/list/SectionListItem';
+import ShelfListItem from 'src/view/shelf/list/ShelfListItem';
+import UserListItem from 'src/view/user/list/UserListItem';
 import {
   Table,
   TableRow,
@@ -31,7 +33,7 @@ import DataTableBodyCell from 'src/mui/examples/Tables/DataTable/DataTableBodyCe
 import MDTypography from 'src/mui/components/MDTypography';
 import { selectMuiSettings } from 'src/modules/mui/muiSelectors';
 
-function ShelfListTable(props) {
+function FacingListTable(props) {
   const { sidenavColor } = selectMuiSettings();
   const [recordIdToDestroy, setRecordIdToDestroy] =
     useState(null);
@@ -58,10 +60,10 @@ function ShelfListTable(props) {
     selectors.selectIsAllSelected,
   );
   const hasPermissionToEdit = useSelector(
-    shelfSelectors.selectPermissionToEdit,
+    facingSelectors.selectPermissionToEdit,
   );
   const hasPermissionToDestroy = useSelector(
-    shelfSelectors.selectPermissionToDestroy,
+    facingSelectors.selectPermissionToDestroy,
   );
 
   const doOpenDestroyConfirmModal = (id) => {
@@ -126,24 +128,36 @@ function ShelfListTable(props) {
                 {' '}
               </DataTableHeadCell>
               <DataTableHeadCell
-                onClick={() => doChangeSort('name')}
+                onClick={() => doChangeSort('model')}
                 sorted={
-                  sorter.field === 'name'
+                  sorter.field === 'model'
                     ? sorter.order
                     : 'none'
                 }
                 noWrap
               >
-                {i18n('entities.shelf.fields.name')}
+                {i18n('entities.facing.fields.model')}
               </DataTableHeadCell>
               <DataTableHeadCell sorted={false} noWrap>
-                {i18n('entities.shelf.fields.shop')}
+                {i18n('entities.facing.fields.type')}
               </DataTableHeadCell>
               <DataTableHeadCell sorted={false} noWrap>
-                {i18n('entities.shelf.fields.department')}
+                {i18n('entities.facing.fields.sn')}
               </DataTableHeadCell>
               <DataTableHeadCell sorted={false} noWrap>
-                {i18n('entities.shelf.fields.section')}
+                {i18n('entities.shop.fields.manager')}
+              </DataTableHeadCell>
+              <DataTableHeadCell sorted={false} noWrap>
+                {i18n('entities.facing.fields.shop')}
+              </DataTableHeadCell>
+              <DataTableHeadCell sorted={false} noWrap>
+                {i18n('entities.facing.fields.department')}
+              </DataTableHeadCell>
+              <DataTableHeadCell sorted={false} noWrap>
+                {i18n('entities.facing.fields.section')}
+              </DataTableHeadCell>
+              <DataTableHeadCell sorted={false} noWrap>
+                {i18n('entities.facing.fields.shelf')}
               </DataTableHeadCell>
             </TableRow>
           </MDBox>
@@ -193,7 +207,7 @@ function ShelfListTable(props) {
                         <IconButton
                           component={Link}
                           color={sidenavColor}
-                          to={`/shelf/${row.id}`}
+                          to={`/facing/${row.id}`}
                         >
                           <SearchIcon />
                         </IconButton>
@@ -205,7 +219,7 @@ function ShelfListTable(props) {
                           <IconButton
                             color={sidenavColor}
                             component={Link}
-                            to={`/shelf/${row.id}/edit`}
+                            to={`/facing/${row.id}/edit`}
                           >
                             <EditIcon />
                           </IconButton>
@@ -230,7 +244,16 @@ function ShelfListTable(props) {
                     </MDBox>
                   </DataTableBodyCell>
                   <DataTableBodyCell>
-                    {row.name}
+                    {row.model}
+                  </DataTableBodyCell>
+                  <DataTableBodyCell>
+                    {row.type}
+                  </DataTableBodyCell>
+                  <DataTableBodyCell>
+                    {row.sn}
+                  </DataTableBodyCell>
+                  <DataTableBodyCell>
+                    <UserListItem value={row.manager} />
                   </DataTableBodyCell>
                   <DataTableBodyCell>
                     <ShopListItem value={row.shop} />
@@ -242,6 +265,9 @@ function ShelfListTable(props) {
                   </DataTableBodyCell>
                   <DataTableBodyCell>
                     <SectionListItem value={row.section} />
+                  </DataTableBodyCell>
+                  <DataTableBodyCell>
+                    <ShelfListItem value={row.shelf} />
                   </DataTableBodyCell>
                 </TableRow>
               ))}
@@ -270,4 +296,4 @@ function ShelfListTable(props) {
   );
 }
 
-export default ShelfListTable;
+export default FacingListTable;

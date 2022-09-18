@@ -18,7 +18,7 @@ import { Card, Grid } from '@mui/material';
 
 const schema = yup.object().shape({
   name: yupFormSchemas.string(
-    i18n('entities.name.fields.name'),
+    i18n('entities.shelf.fields.name'),
     {
       required: true,
       max: 200,
@@ -27,15 +27,21 @@ const schema = yup.object().shape({
   ),
   shop: yupFormSchemas.relationToOne(
     i18n('entities.shelf.fields.shop'),
-    {},
+    {
+      required: true,
+    },
   ),
   department: yupFormSchemas.relationToOne(
     i18n('entities.shelf.fields.department'),
-    {},
+    {
+      required: true,
+    },
   ),
   section: yupFormSchemas.relationToOne(
     i18n('entities.shelf.fields.section'),
-    {},
+    {
+      required: true,
+    },
   ),
 });
 

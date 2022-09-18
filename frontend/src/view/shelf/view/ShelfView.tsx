@@ -20,7 +20,7 @@ function ShelfView(props) {
               </MDTypography>
             </Grid>
             <Grid item lg={6} md={6} sm={12} xs={12}>
-              <DepartmentViewItem
+              <ShopViewItem
                 label={i18n('entities.shelf.fields.shop')}
                 value={record.shop}
               />
@@ -34,7 +34,7 @@ function ShelfView(props) {
               />
             </Grid>
             <Grid item lg={6} md={6} sm={12} xs={12}>
-              <DepartmentViewItem
+              <SectionViewItem
                 label={i18n(
                   'entities.shelf.fields.section',
                 )}

@@ -18,7 +18,7 @@ import { Card, Grid } from '@mui/material';
 
 const schema = yup.object().shape({
   name: yupFormSchemas.string(
-    i18n('entities.name.fields.name'),
+    i18n('entities.shop.fields.name'),
     {
       required: true,
       max: 200,

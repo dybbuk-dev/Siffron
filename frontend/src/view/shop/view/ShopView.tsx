@@ -17,7 +17,6 @@ function ShopView(props) {
                 {record.name}
               </MDTypography>
             </Grid>
-
             <Grid item lg={6} md={6} sm={12} xs={12}>
               <UserViewItem
                 label={i18n('entities.shop.fields.manager')}

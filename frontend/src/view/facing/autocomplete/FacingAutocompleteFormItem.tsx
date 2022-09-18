@@ -1,12 +1,12 @@
 import React, { useState } from 'react';
-import ShelfService from 'src/modules/shelf/shelfService';
-import ShelfFormModal from 'src/view/shelf/form/ShelfFormModal';
+import FacingService from 'src/modules/facing/facingService';
+import FacingFormModal from 'src/view/facing/form/FacingFormModal';
 import AutocompleteInMemoryFormItem from 'src/view/shared/form/items/AutocompleteInMemoryFormItem';
 import { useFormContext } from 'react-hook-form';
 import { useSelector } from 'react-redux';
-import selectors from 'src/modules/shelf/shelfSelectors';
+import selectors from 'src/modules/facing/facingSelectors';
 
-function ShelfAutocompleteFormItem(props) {
+function FacingAutocompleteFormItem(props) {
   const { setValue, getValues } = useFormContext();
 
   const [modalVisible, setModalVisible] = useState(false);
@@ -46,7 +46,7 @@ function ShelfAutocompleteFormItem(props) {
   };
 
   const fetchFn = (value, limit) => {
-    return ShelfService.listAutocomplete(value, limit);
+    return FacingService.listAutocomplete(value, limit);
   };
 
   const mapper = {
@@ -81,22 +81,19 @@ function ShelfAutocompleteFormItem(props) {
     },
   };
 
-  const { section } = props;
-
   return (
     <>
       <AutocompleteInMemoryFormItem
         {...props}
         fetchFn={fetchFn}
         mapper={mapper}
-        belongTo={section}
         onOpenModal={doOpenModal}
         hasPermissionToCreate={hasPermissionToCreate}
         rerender={rerender}
       />
 
       {modalVisible && (
-        <ShelfFormModal
+        <FacingFormModal
           onClose={doCloseModal}
           onSuccess={doCreateSuccess}
         />
@@ -105,4 +102,4 @@ function ShelfAutocompleteFormItem(props) {
   );
 }
 
-export default ShelfAutocompleteFormItem;
+export default FacingAutocompleteFormItem;

@@ -9,6 +9,7 @@ import shop from 'src/modules/shop/shopReducers';
 import department from 'src/modules/department/departmentReducers';
 import section from 'src/modules/section/sectionReducers';
 import shelf from 'src/modules/shelf/shelfReducers';
+import facing from 'src/modules/facing/facingReducers';
 import task from 'src/modules/task/taskReducers';
 import taskPriority from 'src/modules/taskPriority/taskPriorityReducers';
 import taskList from 'src/modules/taskList/taskListReducers';
@@ -29,6 +30,7 @@ export default (history) =>
     department,
     section,
     shelf,
+    facing,
     tenant,
     user,
     auditLog,

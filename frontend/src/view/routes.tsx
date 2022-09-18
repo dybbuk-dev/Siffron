@@ -406,10 +406,10 @@ const privateRoutes = [
     permissionRequired: permissions.shelfRead,
     exact: true,
   },
-  /*
+
   {
     path: '/facing',
-    collapseName: 'facings',
+    collapseName: 'managements',
     i18n: 'entities.facing.menu',
     parent: '/management',
     loader: () =>
@@ -420,7 +420,7 @@ const privateRoutes = [
 
   {
     path: '/facing/new',
-    collapseName: 'facings',
+    collapseName: 'managements',
     i18n: 'entities.facing.new.title',
     parent: '/facing',
     loader: () =>
@@ -431,7 +431,7 @@ const privateRoutes = [
 
   {
     path: '/facing/importer',
-    collapseName: 'facings',
+    collapseName: 'managements',
     i18n: 'entities.facing.importer.title',
     parent: '/facing',
     loader: () =>
@@ -442,7 +442,7 @@ const privateRoutes = [
 
   {
     path: '/facing/:id/edit',
-    collapseName: 'facings',
+    collapseName: 'managements',
     i18n: 'entities.facing.edit.title',
     parent: '/facing',
     loader: () =>
@@ -453,14 +453,14 @@ const privateRoutes = [
 
   {
     path: '/facing/:id',
-    collapseName: 'facings',
+    collapseName: 'managements',
     i18n: 'entities.facing.view.title',
     parent: '/facing',
     loader: () =>
       import('src/view/facing/view/FacingViewPage'),
     permissionRequired: permissions.facingRead,
     exact: true,
-  },*/
+  },
 
   {
     path: '/tasks-breadcrumb',

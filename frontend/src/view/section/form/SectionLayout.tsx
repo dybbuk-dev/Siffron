@@ -53,7 +53,7 @@ function SectionLayout(props) {
           <ShopAutocompleteFormItem
             name="shop"
             label={i18n('entities.section.fields.shop')}
-            required={false}
+            required={true}
             showCreate={true}
             onChange={onChange}
             variant="standard"
@@ -67,7 +67,7 @@ function SectionLayout(props) {
             label={i18n(
               'entities.section.fields.department',
             )}
-            required={false}
+            required={true}
             showCreate={true}
             variant="standard"
             fullWidth

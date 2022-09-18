@@ -6,7 +6,8 @@ import FormWrapper, {
 import { useForm, FormProvider } from 'react-hook-form';
 import * as yup from 'yup';
 import yupFormSchemas from 'src/modules/shared/yup/yupFormSchemas';
-import DepartmentLayout from 'src/view/department/form/DepartmentLayout';
+import FacingLayout from 'src/view/facing/form/FacingLayout';
+import facingEnumerators from 'src/modules/facing/facingEnumerators';
 import { yupResolver } from '@hookform/resolvers/yup';
 import CloseIcon from '@mui/icons-material/Close';
 import SaveIcon from '@mui/icons-material/Save';
@@ -17,30 +18,80 @@ import MDBox from 'src/mui/components/MDBox';
 import { Card, Grid } from '@mui/material';
 
 const schema = yup.object().shape({
-  name: yupFormSchemas.string(
-    i18n('entities.department.fields.name'),
+  model: yupFormSchemas.string(
+    i18n('entities.facing.fields.model'),
     {
       required: true,
       max: 200,
       min: 1,
     },
   ),
+  type: yupFormSchemas.enumerator(
+    i18n('entities.facing.fields.type'),
+    {
+      required: true,
+      options: facingEnumerators.type,
+    },
+  ),
+  sn: yupFormSchemas.string(
+    i18n('entities.facing.fields.sn'),
+    {
+      required: true,
+      max: 200,
+      min: 1,
+    },
+  ),
+  manager: yupFormSchemas.relationToOne(
+    i18n('entities.facing.fields.manager'),
+    {
+      required: true,
+    },
+  ),
   shop: yupFormSchemas.relationToOne(
-    i18n('entities.department.fields.shop'),
-    {},
+    i18n('entities.facing.fields.shop'),
+    {
+      required: true,
+    },
+  ),
+  department: yupFormSchemas.relationToOne(
+    i18n('entities.facing.fields.department'),
+    {
+      required: true,
+    },
+  ),
+  section: yupFormSchemas.relationToOne(
+    i18n('entities.facing.fields.section'),
+    {
+      required: true,
+    },
+  ),
+  shelf: yupFormSchemas.relationToOne(
+    i18n('entities.facing.fields.shelf'),
+    {
+      required: true,
+    },
   ),
 });
 
-function DepartmentForm(props) {
+function FacingForm(props) {
   const { sidenavColor } = selectMuiSettings();
   const [initialValues] = useState(() => {
     const record = props.record || {};
 
     return {
-      name: record.name,
+      model: record.model,
+      type: record.type,
+      sn: record.sn,
+      manager: record.manager,
       shop: record.shop,
+      department: record.department,
+      section: record.department,
+      shelf: record.shelf,
     };
   });
+  const [shop, setShop] = useState(null);
+  const [department, setDepartment] = useState(null);
+  const [section, setSection] = useState(null);
 
   const form = useForm({
     resolver: yupResolver(schema),
@@ -50,7 +101,18 @@ function DepartmentForm(props) {
 
   const onSubmit = (values) => {
     props.onSubmit(props.record?.id, values);
-    console.log(values);
+  };
+
+  const onChangeShop = (value) => {
+    setShop(value.id);
+  };
+
+  const onChangeDepartment = (value) => {
+    setDepartment(value.id);
+  };
+
+  const onChangeSection = (value) => {
+    setSection(value.id);
   };
 
   const onReset = () => {
@@ -115,7 +177,15 @@ function DepartmentForm(props) {
         <form onSubmit={form.handleSubmit(onSubmit)}>
           {modal ? (
             <>
-              <DepartmentLayout title={title} />
+              <FacingLayout
+                onChangeShop={onChangeShop}
+                onChangeDepartment={onChangeDepartment}
+                onChangeSection={onChangeSection}
+                shop={shop}
+                department={department}
+                section={section}
+                title={title}
+              />
               <MDBox px={1}>{makeFormButtons()}</MDBox>
             </>
           ) : (
@@ -128,7 +198,17 @@ function DepartmentForm(props) {
               <Grid item lg={9} md={8} sm={12} xs={12}>
                 <Card>
                   <MDBox px={2} py={2}>
-                    <DepartmentLayout title={title} />
+                    <FacingLayout
+                      onChangeShop={onChangeShop}
+                      onChangeDepartment={
+                        onChangeDepartment
+                      }
+                      onChangeSection={onChangeSection}
+                      title={title}
+                      shop={shop}
+                      section={section}
+                      department={department}
+                    />
                     <MDBox px={1}>
                       {makeFormButtons()}
                     </MDBox>
@@ -143,4 +223,4 @@ function DepartmentForm(props) {
   );
 }
 
-export default DepartmentForm;
+export default FacingForm;

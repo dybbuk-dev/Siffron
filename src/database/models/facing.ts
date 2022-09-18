@@ -19,7 +19,7 @@ export default (database) => {
       type: {
         type: String,
         required: true,
-        enum: ['pusher', 'hook'],
+        enum: ['Pusher', 'Hook'],
       },
       sn: {
         type: String,
