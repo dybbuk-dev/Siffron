@@ -50,7 +50,6 @@ function DepartmentForm(props) {
 
   const onSubmit = (values) => {
     props.onSubmit(props.record?.id, values);
-    console.log(values);
   };
 
   const onReset = () => {

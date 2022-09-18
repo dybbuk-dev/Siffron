@@ -30,11 +30,6 @@ export default class Storage {
         maxSizeInBytes: 10 * 1024 * 1024,
         publicRead: true,
       },
-      taskAttachments: {
-        id: 'taskAttachments',
-        folder: 'tenant/:tenantId/task/attachments',
-        maxSizeInBytes: 20971520,
-      },
     };
   }
 }

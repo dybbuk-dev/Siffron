@@ -5,17 +5,16 @@ import User from '../models/user';
 import Tenant from '../models/tenant';
 import Settings from '../models/settings';
 import Error404 from '../../errors/Error404';
-import Task from '../models/task';
-import TaskInstance from '../models/taskInstance';
-import TaskPriority from '../models/taskPriority';
-import TaskList from '../models/taskList';
-import Note from '../models/note';
+import Shop from '../models/shop';
+import Department from '../models/department';
+import Section from '../models/section';
+import Shelf from '../models/shelf';
+import Facing from '../models/facing';
 import Error400 from '../../errors/Error400';
 import { v4 as uuid } from 'uuid';
 import { isUserInTenant } from '../utils/userTenantUtils';
 import SettingsRepository from './settingsRepository';
 import { IRepositoryOptions } from './IRepositoryOptions';
-import TaskPriorityRepositoryEx from './extend/taskPriorityRepositoryEx';
 
 const forbiddenTenantUrls = ['www'];
 
@@ -63,14 +62,6 @@ class TenantRepository {
         currentTenant: record,
       },
     );
-
-    await TaskPriorityRepositoryEx.buildUpDefaultRecords({
-      ...options,
-      currentTenant: {
-        ...record,
-        id: MongooseQueryUtils.ObjectId(record.id),
-      },
-    });
 
     return this.findById(record.id, {
       ...options,
@@ -160,27 +151,27 @@ class TenantRepository {
       options,
     );
 
-    await Task(options.database).deleteMany(
+    await Shop(options.database).deleteMany(
       { tenant: id },
       options,
     );
 
-    await TaskInstance(options.database).deleteMany(
+    await Department(options.database).deleteMany(
       { Tenant: id },
       options,
     );
 
-    await TaskPriority(options.database).deleteMany(
+    await Section(options.database).deleteMany(
       { tenant: id },
       options,
     );
 
-    await TaskList(options.database).deleteMany(
+    await Shelf(options.database).deleteMany(
       { tenant: id },
       options,
     );
 
-    await Note(options.database).deleteMany(
+    await Facing(options.database).deleteMany(
       { tenant: id },
       options,
     );

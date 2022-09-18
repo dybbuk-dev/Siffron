@@ -14,34 +14,6 @@ const menus = [
   },
 
   {
-    name: i18n('collapses.tasks.menu'),
-    key: 'tasks',
-    icon: <Icon fontSize="medium">assignment</Icon>,
-    collapse: [
-      {
-        path: '/task',
-        permissionRequired: permissions.taskRead,
-        name: i18n('entities.task.menu'),
-        icon: <Icon>task</Icon>,
-      },
-
-      {
-        path: '/task-priority',
-        permissionRequired: permissions.taskPriorityRead,
-        name: i18n('entities.taskPriority.menu'),
-        icon: <Icon>low_priority</Icon>,
-      },
-
-      {
-        path: '/task-list',
-        permissionRequired: permissions.taskListRead,
-        name: i18n('entities.taskList.menu'),
-        icon: <Icon>list_alt</Icon>,
-      },
-    ],
-  },
-
-  {
     name: i18n('collapses.management.menu'),
     key: 'managements',
     icon: <Icon fontSize="medium">poll</Icon>,
@@ -79,20 +51,6 @@ const menus = [
         permissionRequired: permissions.facingRead,
         name: i18n('entities.facing.menu'),
         icon: <Icon>inventory</Icon>,
-      },
-    ],
-  },
-
-  {
-    name: i18n('collapses.reports.menu'),
-    key: 'reports',
-    icon: <Icon fontSize="medium">assessment</Icon>,
-    collapse: [
-      {
-        path: '/report/tasks-by-month',
-        permissionRequired: permissions.taskRead,
-        name: i18n('reports.tasksByMonth.menu'),
-        icon: <Icon>task</Icon>,
       },
     ],
   },

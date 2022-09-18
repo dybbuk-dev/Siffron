@@ -85,7 +85,7 @@ function FacingForm(props) {
       manager: record.manager,
       shop: record.shop,
       department: record.department,
-      section: record.department,
+      section: record.section,
       shelf: record.shelf,
     };
   });

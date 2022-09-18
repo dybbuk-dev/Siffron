@@ -34,10 +34,8 @@ function FacingFormPage(props) {
 
   const doSubmit = (id, data) => {
     if (isEditing) {
-      console.log(data);
       dispatch(actions.doUpdate(id, data));
     } else {
-      console.log(data);
       dispatch(actions.doCreate(data));
     }
   };

@@ -1,7 +1,6 @@
 import { createSelector } from 'reselect';
 
 const selectRaw = (state) => state.shop.list;
-console.log(selectRaw);
 
 const selectLoading = createSelector(
   [selectRaw],

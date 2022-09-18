@@ -79,7 +79,6 @@ function AutocompleteInMemoryFormItem(props) {
       setLoading(true);
 
       try {
-        console.log(props.belongTo);
         let fullDataSource = props.belongTo
           ? await fetchFn(props.belongTo)
           : await fetchFn();

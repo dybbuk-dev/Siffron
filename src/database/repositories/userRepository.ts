@@ -11,7 +11,6 @@ import { isUserInTenant } from '../utils/userTenantUtils';
 import { IRepositoryOptions } from './IRepositoryOptions';
 import lodash from 'lodash';
 import { getUserNameOrEmailPrefix } from '../../utils/userUtils';
-import TaskPriorityRepositoryEx from './extend/taskPriorityRepositoryEx';
 export default class UserRepository {
   static async create(data, options: IRepositoryOptions) {
     const currentUser =
@@ -813,11 +812,6 @@ export default class UserRepository {
             currentTenant: userTenant.tenant,
             ...options,
           });
-          userTenant.tenant.defaultTaskPriority =
-            await TaskPriorityRepositoryEx.defaultPriority({
-              currentTenant: userTenant.tenant,
-              ...options,
-            });
         }),
       );
     }

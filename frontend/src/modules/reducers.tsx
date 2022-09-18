@@ -10,20 +10,13 @@ import department from 'src/modules/department/departmentReducers';
 import section from 'src/modules/section/sectionReducers';
 import shelf from 'src/modules/shelf/shelfReducers';
 import facing from 'src/modules/facing/facingReducers';
-import task from 'src/modules/task/taskReducers';
-import taskPriority from 'src/modules/taskPriority/taskPriorityReducers';
-import taskList from 'src/modules/taskList/taskListReducers';
 import { combineReducers } from 'redux';
 import mui from 'src/modules/mui/muiReducers';
-import widget from 'src/modules/widget/widgetReducers';
-import taskInstance from 'src/modules/taskInstance/taskInstanceReducers';
 
 export default (history) =>
   combineReducers({
     router: connectRouter(history),
     mui,
-    widget,
-    taskInstance,
     layout,
     auth,
     shop,
@@ -35,7 +28,4 @@ export default (history) =>
     user,
     auditLog,
     settings,
-    task,
-    taskPriority,
-    taskList,
   });

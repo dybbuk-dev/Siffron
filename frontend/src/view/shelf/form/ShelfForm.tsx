@@ -54,7 +54,7 @@ function ShelfForm(props) {
       name: record.name,
       shop: record.shop,
       department: record.department,
-      section: record.department,
+      section: record.section,
     };
   });
   const [shop, setShop] = useState(null);

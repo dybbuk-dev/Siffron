@@ -10,18 +10,6 @@
 export default class Storage {
   static get values() {
     return {
-      taskAttachments: {
-        id: 'taskAttachments',
-        folder: 'tenant/:tenantId/task/attachments',
-        maxSizeInBytes: 20971520,
-      },
-
-      productLogo: {
-        id: 'productLogo',
-        folder: 'tenant/:tenantId/product/logo',
-        maxSizeInBytes: 5242880,
-      },
-
       settingsLogos: {
         id: 'settingsLogos',
         folder: 'tenant/:tenantId/settings/logos',
