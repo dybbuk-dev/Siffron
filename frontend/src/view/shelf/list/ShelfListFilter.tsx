@@ -23,6 +23,8 @@ import filterRenders from 'src/modules/shared/filter/filterRenders';
 import FilterPreview from 'src/view/shared/filter/FilterPreview';
 import FilterAccordion from 'src/view/shared/filter/FilterAccordion';
 import InputFormItem from 'src/view/shared/form/items/InputFormItem';
+import ShopAutocompleteFormItem from 'src/view/shop/autocomplete/ShopAutocompleteFormItem';
+import DepartmentAutocompleteFormItem from 'src/view/department/autocomplete/DepartmentAutocompleteFormItem';
 import SectionAutocompleteFormItem from 'src/view/section/autocomplete/SectionAutocompleteFormItem';
 import MDButton from 'src/mui/components/MDButton';
 import { selectMuiSettings } from 'src/modules/mui/muiSelectors';
@@ -31,6 +33,12 @@ const schema = yup.object().shape({
   name: yupFilterSchemas.string(
     i18n('entities.shelf.fields.name'),
   ),
+  shop: yupFilterSchemas.relationToOne(
+    i18n('entities.shelf.fields.shop'),
+  ),
+  department: yupFilterSchemas.relationToOne(
+    i18n('entities.shelf.fields.department'),
+  ),
   section: yupFilterSchemas.relationToOne(
     i18n('entities.shelf.fields.section'),
   ),
@@ -38,6 +46,8 @@ const schema = yup.object().shape({
 
 const emptyValues = {
   name: null,
+  shop: null,
+  department: null,
   section: null,
 };
 
@@ -45,6 +55,14 @@ const previewRenders = {
   name: {
     label: i18n('entities.shelf.fields.name'),
     render: filterRenders.generic(),
+  },
+  shop: {
+    label: i18n('entities.shelf.fields.shop'),
+    render: filterRenders.relationToOne(),
+  },
+  department: {
+    label: i18n('entities.shelf.fields.department'),
+    render: filterRenders.relationToOne(),
   },
   section: {
     label: i18n('entities.shelf.fields.section'),
@@ -132,6 +150,26 @@ function ShelfListFilter(props) {
                   />
                 </Grid>
                 <Grid item lg={6} xs={12}>
+                  <ShopAutocompleteFormItem
+                    name="shop"
+                    label={i18n(
+                      'entities.shelf.fields.shop',
+                    )}
+                    variant="standard"
+                    fullWidth
+                  />
+                </Grid>
+                <Grid item lg={6} xs={12}>
+                  <DepartmentAutocompleteFormItem
+                    name="department"
+                    label={i18n(
+                      'entities.shelf.fields.department',
+                    )}
+                    variant="standard"
+                    fullWidth
+                  />
+                </Grid>
+                <Grid item lg={6} xs={12}>
                   <SectionAutocompleteFormItem
                     name="section"
                     label={i18n(
@@ -142,7 +180,6 @@ function ShelfListFilter(props) {
                   />
                 </Grid>
               </Grid>
-
               <FilterButtons>
                 <MDButton
                   variant="gradient"

@@ -10,6 +10,7 @@ import selectors from 'src/modules/section/list/sectionListSelectors';
 import ConfirmModal from 'src/view/shared/modals/ConfirmModal';
 import Pagination from 'src/view/shared/table/Pagination';
 import Spinner from 'src/view/shared/Spinner';
+import ShopListItem from 'src/view/shop/list/ShopListItem';
 import DepartmentListItem from 'src/view/department/list/DepartmentListItem';
 import {
   Table,
@@ -135,6 +136,9 @@ function SectionListTable(props) {
                 {i18n('entities.section.fields.name')}
               </DataTableHeadCell>
               <DataTableHeadCell sorted={false} noWrap>
+                {i18n('entities.section.fields.shop')}
+              </DataTableHeadCell>
+              <DataTableHeadCell sorted={false} noWrap>
                 {i18n('entities.section.fields.department')}
               </DataTableHeadCell>
             </TableRow>
@@ -223,6 +227,9 @@ function SectionListTable(props) {
                   </DataTableBodyCell>
                   <DataTableBodyCell>
                     {row.name}
+                  </DataTableBodyCell>
+                  <DataTableBodyCell>
+                    <ShopListItem value={row.shop} />
                   </DataTableBodyCell>
                   <DataTableBodyCell>
                     <DepartmentListItem

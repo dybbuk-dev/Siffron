@@ -23,6 +23,7 @@ import filterRenders from 'src/modules/shared/filter/filterRenders';
 import FilterPreview from 'src/view/shared/filter/FilterPreview';
 import FilterAccordion from 'src/view/shared/filter/FilterAccordion';
 import InputFormItem from 'src/view/shared/form/items/InputFormItem';
+import ShopAutocompleteFormItem from 'src/view/shop/autocomplete/ShopAutocompleteFormItem';
 import DepartmentAutocompleteFormItem from 'src/view/department/autocomplete/DepartmentAutocompleteFormItem';
 import MDButton from 'src/mui/components/MDButton';
 import { selectMuiSettings } from 'src/modules/mui/muiSelectors';
@@ -31,6 +32,9 @@ const schema = yup.object().shape({
   name: yupFilterSchemas.string(
     i18n('entities.section.fields.name'),
   ),
+  shop: yupFilterSchemas.relationToOne(
+    i18n('entities.section.fields.shop'),
+  ),
   department: yupFilterSchemas.relationToOne(
     i18n('entities.section.fields.department'),
   ),
@@ -38,6 +42,7 @@ const schema = yup.object().shape({
 
 const emptyValues = {
   name: null,
+  shop: null,
   department: null,
 };
 
@@ -45,6 +50,10 @@ const previewRenders = {
   name: {
     label: i18n('entities.section.fields.name'),
     render: filterRenders.generic(),
+  },
+  shop: {
+    label: i18n('entities.section.fields.shop'),
+    render: filterRenders.relationToOne(),
   },
   department: {
     label: i18n('entities.section.fields.department'),
@@ -129,6 +138,16 @@ function SectionListFilter(props) {
                       'entities.section.fields.name',
                     )}
                     variant="standard"
+                  />
+                </Grid>
+                <Grid item lg={6} xs={12}>
+                  <ShopAutocompleteFormItem
+                    name="shop"
+                    label={i18n(
+                      'entities.section.fields.shop',
+                    )}
+                    variant="standard"
+                    fullWidth
                   />
                 </Grid>
                 <Grid item lg={6} xs={12}>
