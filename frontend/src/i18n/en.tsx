@@ -36,7 +36,7 @@ const en = {
 
   mui: {
     configurator: {
-      title: 'Material UI Configurator',
+      title: 'Dashboard Configurator',
       description: 'See our dashboard options.',
       sidenavColor: 'Colors',
       sidenavType: {
@@ -54,41 +54,12 @@ const en = {
   },
 
   collapses: {
-    reports: {
-      menu: 'Reports',
-    },
-    tasks: {
-      menu: 'Tasks',
-    },
-  },
-
-  reports: {
-    tasksByMonth: {
-      menu: 'Tasks By Month',
+    management: {
+      menu: 'Management',
     },
   },
 
   widgets: {
-    tasksByMonth: {
-      title: 'Tasks By Month',
-    },
-    tasksOnCalendar: {
-      title: 'Calendar',
-      modals: {
-        recurring: {
-          title: 'Recurring Task On {0}',
-        },
-        edit: {
-          title: 'Edit Task',
-        },
-        new: {
-          title: 'New Task On {0}',
-        },
-      },
-    },
-    tasksSummary: {
-      title: 'Tasks',
-    },
     upcomingTasks: {
       title: 'Upcoming Tasks',
     },
@@ -102,250 +73,249 @@ const en = {
 
   entities: {
     shop: {
-      name: 'shop',
-      label: 'Shops',
-      menu: 'Shop Register',
-      info: 'Shop Information',
-      instances: 'Shop Instances',
-      exporterFileName: 'shop_export',
+      name: 'store',
+      label: 'Store',
+      menu: 'Store',
+      exporterFileName: 'store_export',
       list: {
-        menu: 'Shops',
-        title: 'Shops',
+        menu: 'Store',
+        title: 'Store',
       },
       create: {
-        success: 'Shop successfully saved',
+        success: 'Store successfully saved',
       },
       update: {
-        success: 'Shop successfully saved',
+        success: 'Store successfully saved',
       },
       destroy: {
-        success: 'Shop successfully deleted',
+        success: 'Store successfully deleted',
       },
       destroyAll: {
-        success: 'Shop(s) successfully deleted',
+        success: 'Store(s) successfully deleted',
       },
       edit: {
-        title: 'Edit Shop',
-      },
-      states: {
-        created: 'Created',
-        completed: 'Completed',
-        overdue: 'Completed overdue',
-        notCompleted: 'Not completed in time',
+        title: 'Edit Store',
       },
       fields: {
         id: 'Id',
         name: 'Name',
+        manager: 'Manager',
         createdAt: 'Created at',
         updatedAt: 'Updated at',
-        createdAtRange: 'Created at',
       },
       enumerators: {},
       placeholders: {},
       hints: {},
       new: {
-        title: 'New Shop',
+        title: 'New Store',
       },
       view: {
-        title: 'View Shop',
+        title: 'View Store',
       },
       importer: {
-        title: 'Import Shops',
-        fileName: 'shop_import_template',
+        title: 'Import Stores',
+        fileName: 'department_import_template',
         hint: 'Files/Images columns must be the URLs of the files separated by space.',
       },
     },
 
-    task: {
-      name: 'task',
-      label: 'Tasks',
-      menu: 'Task Register',
-      info: 'Task Information',
-      instances: 'Task Instances',
-      exporterFileName: 'task_export',
+    department: {
+      name: 'department',
+      label: 'Department',
+      menu: 'Department',
+      exporterFileName: 'department_export',
       list: {
-        menu: 'Tasks',
-        title: 'Tasks',
+        menu: 'Department',
+        title: 'Department',
       },
       create: {
-        success: 'Task successfully saved',
+        success: 'Department successfully saved',
       },
       update: {
-        success: 'Task successfully saved',
+        success: 'Department successfully saved',
       },
       destroy: {
-        success: 'Task successfully deleted',
+        success: 'Department successfully deleted',
       },
       destroyAll: {
-        success: 'Task(s) successfully deleted',
+        success: 'Department(s) successfully deleted',
       },
       edit: {
-        title: 'Edit Task',
-      },
-      states: {
-        created: 'Created',
-        completed: 'Completed',
-        overdue: 'Completed overdue',
-        notCompleted: 'Not completed in time',
+        title: 'Edit Department',
       },
       fields: {
         id: 'Id',
-        referenceRange: 'Ref #',
-        reference: 'Ref #',
-        title: 'Title',
-        taskList: 'Task List',
-        instructions: 'Instructions',
-        notes: 'Notes',
-        priority: 'Priority',
-        repeat: 'Repeat',
-        status: 'Status',
-        owner: 'Owner',
-        approver: 'Approver',
-        dueDateRange: 'Due Date',
-        dueDate: 'Due Date',
-        completedDateRange: 'Completed Date',
-        completedDate: 'Completed Date',
-        attachments: 'Attachments',
+        name: 'Name',
+        shop: 'Shop',
         createdAt: 'Created at',
         updatedAt: 'Updated at',
-        createdAtRange: 'Created at',
-      },
-      enumerators: {
-        repeat: {
-          Never: 'Never',
-          Daily: 'Daily',
-          Weekdays: 'Weekdays',
-          Weekends: 'Weekends',
-          Weekly: 'Weekly',
-          Biweekly: 'Biweekly',
-          Monthly: 'Monthly',
-          'Every 3 Months': 'Every 3 Months',
-          'Every 6 Months': 'Every 6 Months',
-          Annually: 'Annually',
-        },
-        status: {
-          Backlog: 'Backlog',
-          ToDo: 'ToDo',
-          'In progress': 'In progress',
-          Complete: 'Complete',
-        },
-      },
-      placeholders: {},
-      hints: {},
-      new: {
-        title: 'New Task',
-      },
-      view: {
-        title: 'View Task',
-      },
-      importer: {
-        title: 'Import Tasks',
-        fileName: 'task_import_template',
-        hint: 'Files/Images columns must be the URLs of the files separated by space.',
-      },
-    },
-
-    taskPriority: {
-      name: 'taskPriority',
-      label: 'Task Priorities',
-      menu: 'Task Priorities',
-      exporterFileName: 'taskPriority_export',
-      list: {
-        menu: 'Task Priorities',
-        title: 'Task Priorities',
-      },
-      create: {
-        success: 'Task Priority successfully saved',
-      },
-      update: {
-        success: 'Task Priority successfully saved',
-      },
-      destroy: {
-        success: 'Task Priority successfully deleted',
-      },
-      destroyAll: {
-        success: 'Task Priority(s) successfully deleted',
-      },
-      edit: {
-        title: 'Edit Task Priority',
-      },
-      fields: {
-        id: 'Id',
-        priority: 'Priority',
-        createdAt: 'Created at',
-        updatedAt: 'Updated at',
-        createdAtRange: 'Created at',
       },
       enumerators: {},
       placeholders: {},
       hints: {},
       new: {
-        title: 'New Task Priority',
+        title: 'New Department',
       },
       view: {
-        title: 'View Task Priority',
+        title: 'View Department',
       },
       importer: {
-        title: 'Import Task Priorities',
-        fileName: 'taskPriority_import_template',
+        title: 'Import Departments',
+        fileName: 'department_import_template',
         hint: 'Files/Images columns must be the URLs of the files separated by space.',
       },
     },
 
-    taskList: {
-      name: 'taskList',
-      label: 'Task Lists',
-      menu: 'Task Lists',
-      exporterFileName: 'taskList_export',
+    section: {
+      name: 'section',
+      label: 'Section',
+      menu: 'Section',
+      exporterFileName: 'section_export',
       list: {
-        menu: 'Task Lists',
-        title: 'Task Lists',
+        menu: 'Section',
+        title: 'Section',
       },
       create: {
-        success: 'Task List successfully saved',
+        success: 'Section successfully saved',
       },
       update: {
-        success: 'Task List successfully saved',
+        success: 'Section successfully saved',
       },
       destroy: {
-        success: 'Task List successfully deleted',
+        success: 'Section successfully deleted',
       },
       destroyAll: {
-        success: 'Task List(s) successfully deleted',
+        success: 'Section(s) successfully deleted',
       },
       edit: {
-        title: 'Edit Task List',
+        title: 'Edit Section',
       },
       fields: {
         id: 'Id',
         name: 'Name',
-        taskdisplaycolor: 'Display Color',
+        shop: 'Shop',
+        department: 'Department',
         createdAt: 'Created at',
         updatedAt: 'Updated at',
-        createdAtRange: 'Created at',
+      },
+      enumerators: {},
+      placeholders: {},
+      hints: {},
+      new: {
+        title: 'New Section',
+      },
+      view: {
+        title: 'View Section',
+      },
+      importer: {
+        title: 'Import Sections',
+        fileName: 'section_import_template',
+        hint: 'Files/Images columns must be the URLs of the files separated by space.',
+      },
+    },
+
+    shelf: {
+      name: 'shelf',
+      label: 'Shelf',
+      menu: 'Shelf',
+      exporterFileName: 'shelf_export',
+      list: {
+        menu: 'Shelf',
+        title: 'Shelf',
+      },
+      create: {
+        success: 'Shelf successfully saved',
+      },
+      update: {
+        success: 'Shelf successfully saved',
+      },
+      destroy: {
+        success: 'Shelf successfully deleted',
+      },
+      destroyAll: {
+        success: 'Shelf(s) successfully deleted',
+      },
+      edit: {
+        title: 'Edit Shelf',
+      },
+      fields: {
+        id: 'Id',
+        name: 'Name',
+        shop: 'Shop',
+        department: 'Department',
+        section: 'Section',
+        createdAt: 'Created at',
+        updatedAt: 'Updated at',
+      },
+      enumerators: {},
+      placeholders: {},
+      hints: {},
+      new: {
+        title: 'New Shelf',
+      },
+      view: {
+        title: 'View Shelf',
+      },
+      importer: {
+        title: 'Import Shelves',
+        fileName: 'shelf_import_template',
+        hint: 'Files/Images columns must be the URLs of the files separated by space.',
+      },
+    },
+
+    facing: {
+      name: 'facing',
+      label: 'Facing',
+      menu: 'Facing',
+      exporterFileName: 'facing_export',
+      list: {
+        menu: 'Facing',
+        title: 'Facing',
+      },
+      create: {
+        success: 'Facing successfully saved',
+      },
+      update: {
+        success: 'Facing successfully saved',
+      },
+      destroy: {
+        success: 'Facing successfully deleted',
+      },
+      destroyAll: {
+        success: 'Facing(s) successfully deleted',
+      },
+      edit: {
+        title: 'Edit Facing',
+      },
+      fields: {
+        id: 'Id',
+        model: 'Model',
+        type: 'Type',
+        sn: 'Serial Number',
+        shop: 'Shop',
+        department: 'Department',
+        section: 'Section',
+        shelf: 'Shelf',
+        createdAt: 'Created at',
+        updatedAt: 'Updated at',
       },
       enumerators: {
-        taskdisplaycolor: {
-          red: 'Red',
-          orange: 'Orange',
-          yellow: 'Yellow',
-          green: 'Green',
-          blue: 'Blue',
-          indigo: 'Indigo',
-          violet: 'Violet',
+        type: {
+          Pusher: 'Pusher',
+          Hook: 'Hook',
         },
       },
       placeholders: {},
       hints: {},
       new: {
-        title: 'New Task List',
+        title: 'New Facing',
       },
       view: {
-        title: 'View Task List',
+        title: 'View Facing',
       },
       importer: {
-        title: 'Import Task Lists',
-        fileName: 'taskList_import_template',
+        title: 'Import Facings',
+        fileName: 'facing_import_template',
         hint: 'Files/Images columns must be the URLs of the files separated by space.',
       },
     },
@@ -486,40 +456,39 @@ const en = {
 
   tenant: {
     name: 'tenant',
-    label: 'Workspaces',
-    menu: 'Workspaces',
+    label: 'Companies',
+    menu: 'Companies',
     list: {
-      menu: 'Workspaces',
-      title: 'Workspaces',
+      menu: 'Companies',
+      title: 'Companies',
     },
     create: {
-      button: 'Create Workspace',
-      success: 'Workspace successfully saved',
+      button: 'Add Company',
+      success: 'Company successfully saved',
     },
     update: {
-      success: 'Workspace successfully saved',
+      success: 'Company successfully saved',
     },
     destroy: {
-      success: 'Workspace successfully deleted',
+      success: 'Company successfully deleted',
     },
     destroyAll: {
-      success: 'Workspace(s) successfully deleted',
+      success: 'Company(s) successfully deleted',
     },
     edit: {
-      title: 'Edit Workspace',
+      title: 'Edit Company',
     },
     fields: {
       id: 'Id',
       name: 'Name',
       url: 'URL',
-      tenantName: 'Workspace Name',
-      tenantId: 'Workspace',
-      tenantUrl: 'Workspace URL',
-      plan: 'Plan',
+      tenantName: 'Company Name',
+      tenantId: 'Company',
+      tenantUrl: 'Company URL',
     },
     enumerators: {},
     new: {
-      title: 'New Workspace',
+      title: 'Add Company',
     },
     invitation: {
       view: 'View Invitations',
@@ -529,41 +498,10 @@ const en = {
       declined: 'Invitation successfully declined',
       acceptWrongEmail: 'Accept Invitation With This Email',
     },
-    select: 'Select Workspace',
+    select: 'Select Company',
     validation: {
-      url: 'Your workspace URL can only contain lowercase letters, numbers and dashes (and must start with a letter or number).',
+      url: 'Your company URL can only contain lowercase letters, numbers and dashes (and must start with a letter or number).',
     },
-  },
-
-  plan: {
-    menu: 'Subscriptions',
-    title: 'Subscriptions',
-
-    free: {
-      label: 'Free',
-      price: '0',
-      unit: '$',
-    },
-    growth: {
-      label: 'Growth',
-      price: '10',
-      unit: '$',
-    },
-    enterprise: {
-      label: 'Enterprise',
-      price: '50',
-      unit: '$',
-    },
-
-    pricingPeriod: 'month',
-    current: 'Current Subscription',
-    subscribe: 'Subscribe',
-    manage: 'Manage Subscription',
-    cancelAtPeriodEnd:
-      'This plan will be canceled at the end of the period.',
-    somethingWrong:
-      'There is something wrong with your subscription. Please go to manage subscription for more details.',
-    notPlanUser: `You are not the manager of this subscription.`,
   },
 
   auditLog: {

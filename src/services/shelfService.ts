@@ -50,7 +50,7 @@ export default class ShelfService {
       MongooseRepository.handleUniqueFieldError(
         error,
         this.options.language,
-        'shelf',
+        'entities.shelf.errors.unique.name',
       );
 
       throw error;
@@ -98,7 +98,7 @@ export default class ShelfService {
       MongooseRepository.handleUniqueFieldError(
         error,
         this.options.language,
-        'shelf',
+        'entities.shelf.errors.unique.name',
       );
 
       throw error;

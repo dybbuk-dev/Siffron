@@ -36,7 +36,7 @@ export default class ShopService {
       MongooseRepository.handleUniqueFieldError(
         error,
         this.options.language,
-        'shop',
+        'entities.shop.errors.unique.name',
       );
 
       throw error;
@@ -68,7 +68,7 @@ export default class ShopService {
       MongooseRepository.handleUniqueFieldError(
         error,
         this.options.language,
-        'shop',
+        'entities.shop.errors.unique.name',
       );
 
       throw error;

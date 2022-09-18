@@ -39,7 +39,7 @@ export default class DepartmentService {
       MongooseRepository.handleUniqueFieldError(
         error,
         this.options.language,
-        'department',
+        'entities.department.errors.unique.name',
       );
 
       throw error;
@@ -75,7 +75,7 @@ export default class DepartmentService {
       MongooseRepository.handleUniqueFieldError(
         error,
         this.options.language,
-        'department',
+        'entities.department.errors.unique.name',
       );
 
       throw error;

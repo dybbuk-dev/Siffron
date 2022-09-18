@@ -91,75 +91,39 @@ const en = {
   },
 
   entities: {
-    vendor: {
+    shop: {
       errors: {
         unique: {
-          reference: 'Ref # must be unique',
+          name: 'Name must be unique.',
         },
       },
     },
-    vendorCategory: {
+    department: {
       errors: {
         unique: {
-          name: 'Name must be unique',
+          name: 'Name must be unique.',
         },
       },
     },
-    task: {
+    section: {
       errors: {
         unique: {
-          reference: 'Ref # must be unique',
+          name: 'Name must be unique.',
         },
       },
     },
-    taskPriority: {
+    shelf: {
       errors: {
         unique: {
-          priority: 'Priority must be unique',
+          name: 'Name must be unique.',
         },
       },
     },
-    taskList: {
-      errors: {
-        unique: {},
-      },
-    },
-    note: {
-      errors: {
-        unique: {},
-      },
-    },
-    risk: {
+    facing: {
       errors: {
         unique: {
-          reference: 'Ref # must be unique',
+          sn: 'Serial Number must be unique.',
         },
-      },
-    },
-    riskCategory: {
-      errors: {
-        unique: {
-          name: 'Name must be unique',
-        },
-      },
-    },
-    product: {
-      errors: {
-        unique: {
-          reference: 'Ref # must be unique',
-        },
-      },
-    },
-    productCategory: {
-      errors: {
-        unique: {
-          name: 'Name must be unique',
-        },
-      },
-    },
-    organizationProfile: {
-      errors: {
-        unique: {},
       },
     },
   },

@@ -43,7 +43,7 @@ export default class SectionService {
       MongooseRepository.handleUniqueFieldError(
         error,
         this.options.language,
-        'section',
+        'entities.section.errors.unique.name',
       );
 
       throw error;
@@ -85,7 +85,7 @@ export default class SectionService {
       MongooseRepository.handleUniqueFieldError(
         error,
         this.options.language,
-        'section',
+        'entities.section.errors.unique.name',
       );
 
       throw error;

@@ -62,7 +62,7 @@ export default class FacingService {
       MongooseRepository.handleUniqueFieldError(
         error,
         this.options.language,
-        'facing',
+        'entities.facing.errors.unique.sn',
       );
 
       throw error;
@@ -120,7 +120,7 @@ export default class FacingService {
       MongooseRepository.handleUniqueFieldError(
         error,
         this.options.language,
-        'facing',
+        'entities.facing.errors.unique.sn',
       );
 
       throw error;

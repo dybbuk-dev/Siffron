@@ -89,69 +89,39 @@ const ptBR = {
   },
 
   entities: {
-    vendor: {
+    shop: {
       errors: {
         unique: {
-          reference: 'Ref # deve ser único',
+          name: 'O nome deve ser único.',
         },
       },
     },
-    vendorCategory: {
-      errors: {
-        unique: {},
-      },
-    },
-    task: {
+    department: {
       errors: {
         unique: {
-          reference: 'Ref # deve ser único',
+          name: 'O nome deve ser único.',
         },
       },
     },
-    taskPriority: {
-      errors: {
-        unique: {},
-      },
-    },
-    taskList: {
-      errors: {
-        unique: {},
-      },
-    },
-    note: {
-      errors: {
-        unique: {},
-      },
-    },
-    risk: {
+    section: {
       errors: {
         unique: {
-          reference: 'Ref # deve ser único',
+          name: 'O nome deve ser único.',
         },
       },
     },
-    riskCategory: {
-      errors: {
-        unique: {},
-      },
-    },
-    product: {
+    shelf: {
       errors: {
         unique: {
-          reference: 'Ref # deve ser único',
+          name: 'O nome deve ser único.',
         },
       },
     },
-    productCategory: {
+    facing: {
       errors: {
         unique: {
-          name: 'Name deve ser único',
+          sn: 'O número de série deve ser único.',
         },
-      },
-    },
-    organizationProfile: {
-      errors: {
-        unique: {},
       },
     },
   },

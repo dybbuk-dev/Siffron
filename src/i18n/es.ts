@@ -93,69 +93,39 @@ const es = {
   },
 
   entities: {
-    vendor: {
+    shop: {
       errors: {
         unique: {
-          reference: 'Ref # debe ser único',
+          name: 'El nombre debe ser único.',
         },
       },
     },
-    vendorCategory: {
-      errors: {
-        unique: {},
-      },
-    },
-    task: {
+    department: {
       errors: {
         unique: {
-          reference: 'Ref # debe ser único',
+          name: 'El nombre debe ser único',
         },
       },
     },
-    taskPriority: {
-      errors: {
-        unique: {},
-      },
-    },
-    taskList: {
-      errors: {
-        unique: {},
-      },
-    },
-    note: {
-      errors: {
-        unique: {},
-      },
-    },
-    risk: {
+    section: {
       errors: {
         unique: {
-          reference: 'Ref # debe ser único',
+          name: 'El nombre debe ser único',
         },
       },
     },
-    riskCategory: {
-      errors: {
-        unique: {},
-      },
-    },
-    product: {
+    shelf: {
       errors: {
         unique: {
-          reference: 'Ref # debe ser único',
+          name: 'El nombre debe ser único',
         },
       },
     },
-    productCategory: {
+    facing: {
       errors: {
         unique: {
-          name: 'Name debe ser único',
+          sn: 'El número de serie debe ser único.',
         },
-      },
-    },
-    organizationProfile: {
-      errors: {
-        unique: {},
       },
     },
   },
