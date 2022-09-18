@@ -24,8 +24,8 @@ function SectionFormPage(props) {
 
   const isEditing = Boolean(match.params.id);
   const title = isEditing
-    ? i18n('entities.task.edit.title')
-    : i18n('entities.task.new.title');
+    ? i18n('entities.section.edit.title')
+    : i18n('entities.section.new.title');
 
   useEffect(() => {
     dispatch(actions.doInit(match.params.id));
@@ -34,8 +34,10 @@ function SectionFormPage(props) {
 
   const doSubmit = (id, data) => {
     if (isEditing) {
+      console.log(data);
       dispatch(actions.doUpdate(id, data));
     } else {
+      console.log(data);
       dispatch(actions.doCreate(data));
     }
   };

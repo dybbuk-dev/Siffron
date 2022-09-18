@@ -46,6 +46,10 @@ function DepartmentAutocompleteFormItem(props) {
     return DepartmentService.listAutocomplete(value, limit);
   };
 
+  const onChange = (value) => {
+    props.onChange && props.onChange(value);
+  };
+
   const mapper = {
     toAutocomplete(originalValue) {
       if (!originalValue) {
@@ -78,6 +82,8 @@ function DepartmentAutocompleteFormItem(props) {
     },
   };
 
+  const { shop } = props;
+
   return (
     <>
       <AutocompleteInMemoryFormItem
@@ -85,6 +91,8 @@ function DepartmentAutocompleteFormItem(props) {
         fetchFn={fetchFn}
         mapper={mapper}
         onOpenModal={doOpenModal}
+        belongTo={shop}
+        onChange={onChange}
         hasPermissionToCreate={hasPermissionToCreate}
       />
 

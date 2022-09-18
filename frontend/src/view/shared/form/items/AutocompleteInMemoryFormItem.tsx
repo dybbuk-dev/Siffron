@@ -79,7 +79,10 @@ function AutocompleteInMemoryFormItem(props) {
       setLoading(true);
 
       try {
-        let fullDataSource = await fetchFn();
+        console.log(props.belongTo);
+        let fullDataSource = props.belongTo
+          ? await fetchFn(props.belongTo)
+          : await fetchFn();
 
         fullDataSource = fullDataSource.map((data) =>
           mapper.toAutocomplete(data),
@@ -105,7 +108,7 @@ function AutocompleteInMemoryFormItem(props) {
         );
     });
     // eslint-disable-next-line
-  }, [rerender]);
+  }, [rerender, props.belongTo]);
 
   const prioritizeFromDataSource = (selected) => {
     return (

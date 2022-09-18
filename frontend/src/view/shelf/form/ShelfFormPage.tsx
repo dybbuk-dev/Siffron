@@ -2,14 +2,14 @@ import { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useRouteMatch } from 'react-router-dom';
 import { i18n } from 'src/i18n';
-import actions from 'src/modules/shop/form/shopFormActions';
-import selectors from 'src/modules/shop/form/shopFormSelectors';
-import ShopForm from 'src/view/shop/form/ShopForm';
+import actions from 'src/modules/shelf/form/shelfFormActions';
+import selectors from 'src/modules/shelf/form/shelfFormSelectors';
+import ShelfForm from 'src/view/shelf/form/ShelfForm';
 import { getHistory } from 'src/modules/store';
 import Spinner from 'src/view/shared/Spinner';
 import { Grid } from '@mui/material';
 
-function ShopFormPage(props) {
+function ShelfFormPage(props) {
   const [dispatched, setDispatched] = useState(false);
   const dispatch = useDispatch();
   const match = useRouteMatch();
@@ -24,8 +24,8 @@ function ShopFormPage(props) {
 
   const isEditing = Boolean(match.params.id);
   const title = isEditing
-    ? i18n('entities.shop.edit.title')
-    : i18n('entities.shop.new.title');
+    ? i18n('entities.shelf.edit.title')
+    : i18n('entities.shelf.new.title');
 
   useEffect(() => {
     dispatch(actions.doInit(match.params.id));
@@ -34,8 +34,10 @@ function ShopFormPage(props) {
 
   const doSubmit = (id, data) => {
     if (isEditing) {
+      console.log(data);
       dispatch(actions.doUpdate(id, data));
     } else {
+      console.log(data);
       dispatch(actions.doCreate(data));
     }
   };
@@ -50,12 +52,12 @@ function ShopFormPage(props) {
         {initLoading && <Spinner />}
 
         {dispatched && !initLoading && (
-          <ShopForm
+          <ShelfForm
             saveLoading={saveLoading}
             record={record}
             title={title}
             onSubmit={doSubmit}
-            onCancel={() => getHistory().push('/shop')}
+            onCancel={() => getHistory().push('/shelf')}
           />
         )}
       </Grid>
@@ -63,4 +65,4 @@ function ShopFormPage(props) {
   );
 }
 
-export default ShopFormPage;
+export default ShelfFormPage;

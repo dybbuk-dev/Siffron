@@ -1,15 +1,16 @@
 import React, { useState } from 'react';
-import SectionService from 'src/modules/section/sectionService';
-import SectionFormModal from 'src/view/section/form/SectionFormModal';
+import ShelfService from 'src/modules/shelf/shelfService';
+import ShelfFormModal from 'src/view/shelf/form/ShelfFormModal';
 import AutocompleteInMemoryFormItem from 'src/view/shared/form/items/AutocompleteInMemoryFormItem';
 import { useFormContext } from 'react-hook-form';
 import { useSelector } from 'react-redux';
-import selectors from 'src/modules/section/sectionSelectors';
+import selectors from 'src/modules/shelf/shelfSelectors';
 
-function SectionAutocompleteFormItem(props) {
+function ShelfAutocompleteFormItem(props) {
   const { setValue, getValues } = useFormContext();
 
   const [modalVisible, setModalVisible] = useState(false);
+  const [rerender, setRerender] = useState(0);
 
   const hasPermissionToCreate = useSelector(
     selectors.selectPermissionToCreate,
@@ -39,15 +40,13 @@ function SectionAutocompleteFormItem(props) {
       });
     }
 
+    setRerender(rerender + 1);
+
     doCloseModal();
   };
 
   const fetchFn = (value, limit) => {
-    return SectionService.listAutocomplete(value, limit);
-  };
-
-  const onChange = (value) => {
-    props.onChange && props.onChange(value);
+    return ShelfService.listAutocomplete(value, limit);
   };
 
   const mapper = {
@@ -82,22 +81,19 @@ function SectionAutocompleteFormItem(props) {
     },
   };
 
-  const { department } = props;
-
   return (
     <>
       <AutocompleteInMemoryFormItem
         {...props}
         fetchFn={fetchFn}
         mapper={mapper}
-        belongTo={department}
-        onChange={onChange}
         onOpenModal={doOpenModal}
         hasPermissionToCreate={hasPermissionToCreate}
+        rerender={rerender}
       />
 
       {modalVisible && (
-        <SectionFormModal
+        <ShelfFormModal
           onClose={doCloseModal}
           onSuccess={doCreateSuccess}
         />
@@ -106,4 +102,4 @@ function SectionAutocompleteFormItem(props) {
   );
 }
 
-export default SectionAutocompleteFormItem;
+export default ShelfAutocompleteFormItem;

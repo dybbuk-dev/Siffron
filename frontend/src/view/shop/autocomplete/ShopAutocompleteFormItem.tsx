@@ -45,6 +45,10 @@ function ShopAutocompleteFormItem(props) {
     doCloseModal();
   };
 
+  const onChange = (value) => {
+    props.onChange && props.onChange(value);
+  };
+
   const fetchFn = (value, limit) => {
     return ShopService.listAutocomplete(value, limit);
   };
@@ -86,6 +90,7 @@ function ShopAutocompleteFormItem(props) {
       <AutocompleteInMemoryFormItem
         {...props}
         fetchFn={fetchFn}
+        onChange={onChange}
         mapper={mapper}
         onOpenModal={doOpenModal}
         hasPermissionToCreate={hasPermissionToCreate}

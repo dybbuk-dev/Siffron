@@ -272,7 +272,7 @@ class SectionRepository {
 
     if (search) {
       criteriaAnd.push({
-        _id: MongooseQueryUtils.uuid(search),
+        department: MongooseQueryUtils.uuid(search),
       });
     }
 

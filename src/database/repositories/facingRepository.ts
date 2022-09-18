@@ -295,7 +295,7 @@ class FacingRepository {
 
     if (search) {
       criteriaAnd.push({
-        _id: MongooseQueryUtils.uuid(search),
+        shelf: MongooseQueryUtils.uuid(search),
       });
     }
 

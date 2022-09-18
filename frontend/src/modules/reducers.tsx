@@ -8,6 +8,7 @@ import settings from 'src/modules/settings/settingsReducers';
 import shop from 'src/modules/shop/shopReducers';
 import department from 'src/modules/department/departmentReducers';
 import section from 'src/modules/section/sectionReducers';
+import shelf from 'src/modules/shelf/shelfReducers';
 import task from 'src/modules/task/taskReducers';
 import taskPriority from 'src/modules/taskPriority/taskPriorityReducers';
 import taskList from 'src/modules/taskList/taskListReducers';
@@ -27,6 +28,7 @@ export default (history) =>
     shop,
     department,
     section,
+    shelf,
     tenant,
     user,
     auditLog,

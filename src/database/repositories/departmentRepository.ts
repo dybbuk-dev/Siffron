@@ -272,7 +272,7 @@ class DepartmentRepository {
 
     if (search) {
       criteriaAnd.push({
-        _id: MongooseQueryUtils.uuid(search),
+        shop: MongooseQueryUtils.uuid(search),
       });
     }
 

@@ -274,7 +274,7 @@ class ShelfRepository {
 
     if (search) {
       criteriaAnd.push({
-        _id: MongooseQueryUtils.uuid(search),
+        section: MongooseQueryUtils.uuid(search),
       });
     }
 

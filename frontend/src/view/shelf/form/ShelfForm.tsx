@@ -6,7 +6,7 @@ import FormWrapper, {
 import { useForm, FormProvider } from 'react-hook-form';
 import * as yup from 'yup';
 import yupFormSchemas from 'src/modules/shared/yup/yupFormSchemas';
-import SectionLayout from 'src/view/section/form/SectionLayout';
+import ShelfLayout from 'src/view/shelf/form/ShelfLayout';
 import { yupResolver } from '@hookform/resolvers/yup';
 import CloseIcon from '@mui/icons-material/Close';
 import SaveIcon from '@mui/icons-material/Save';
@@ -25,28 +25,34 @@ const schema = yup.object().shape({
       min: 1,
     },
   ),
-  department: yupFormSchemas.relationToOne(
-    i18n('entities.section.fields.department'),
+  shop: yupFormSchemas.relationToOne(
+    i18n('entities.shelf.fields.shop'),
     {},
   ),
-  shop: yupFormSchemas.relationToOne(
-    i18n('entities.section.fields.shop'),
+  department: yupFormSchemas.relationToOne(
+    i18n('entities.shelf.fields.department'),
+    {},
+  ),
+  section: yupFormSchemas.relationToOne(
+    i18n('entities.shelf.fields.section'),
     {},
   ),
 });
 
-function SectionForm(props) {
+function ShelfForm(props) {
   const { sidenavColor } = selectMuiSettings();
   const [initialValues] = useState(() => {
     const record = props.record || {};
 
     return {
       name: record.name,
-      department: record.department,
       shop: record.shop,
+      department: record.department,
+      section: record.department,
     };
   });
   const [shop, setShop] = useState(null);
+  const [department, setDepartment] = useState(null);
 
   const form = useForm({
     resolver: yupResolver(schema),
@@ -58,8 +64,12 @@ function SectionForm(props) {
     props.onSubmit(props.record?.id, values);
   };
 
-  const onChange = (value) => {
+  const onChangeShop = (value) => {
     setShop(value.id);
+  };
+
+  const onChangeDepartment = (value) => {
+    setDepartment(value.id);
   };
 
   const onReset = () => {
@@ -124,8 +134,11 @@ function SectionForm(props) {
         <form onSubmit={form.handleSubmit(onSubmit)}>
           {modal ? (
             <>
-              <SectionLayout
-                onChange={onChange}
+              <ShelfLayout
+                onChangeShop={onChangeShop}
+                onChangeDepartment={onChangeDepartment}
+                shop={shop}
+                department={department}
                 title={title}
               />
               <MDBox px={1}>{makeFormButtons()}</MDBox>
@@ -140,10 +153,14 @@ function SectionForm(props) {
               <Grid item lg={9} md={8} sm={12} xs={12}>
                 <Card>
                   <MDBox px={2} py={2}>
-                    <SectionLayout
-                      onChange={onChange}
+                    <ShelfLayout
+                      onChangeShop={onChangeShop}
+                      onChangeDepartment={
+                        onChangeDepartment
+                      }
                       title={title}
                       shop={shop}
+                      department={department}
                     />
                     <MDBox px={1}>
                       {makeFormButtons()}
@@ -159,4 +176,4 @@ function SectionForm(props) {
   );
 }
 
-export default SectionForm;
+export default ShelfForm;
