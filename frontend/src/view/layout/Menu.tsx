@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import PermissionChecker from 'src/modules/auth/permissionChecker';
 import layoutSelectors from 'src/modules/layout/layoutSelectors';
 import {
+  dashboard,
   menus,
   profileRoutes,
   tenantRoutes,
@@ -489,18 +490,17 @@ function Menu({
                     sx={{ width: '32px', height: '32px' }}
                   />
                 ),
-                collapse: [...profileRoutes]
-                  .concat(
-                    [
-                      'multi',
-                      'multi-with-subdomain',
-                    ].includes(config.tenantMode)
-                      ? tenantRoutes
-                      : [],
-                  )
-                  .concat([...userRoutes]),
+                collapse: [...profileRoutes],
               },
               { type: 'divider', key: 'divider-0' },
+              ...dashboard,
+              ...([
+                'multi',
+                'multi-with-subdomain',
+              ].includes(config.tenantMode)
+                ? tenantRoutes
+                : []),
+              ...userRoutes,
               ...menus,
             ])}
           </List>

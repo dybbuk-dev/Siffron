@@ -45,7 +45,7 @@ const privateRoutes = [
 
   {
     path: '/tenant',
-    collapseName: 'my-profile',
+    collapseName: 'companies',
     i18n: 'tenant.list.title',
     parent: '/person-name-breadcrumb',
     loader: () =>
@@ -56,7 +56,7 @@ const privateRoutes = [
 
   {
     path: '/tenant/new',
-    collapseName: 'my-profile',
+    collapseName: 'companies',
     i18n: 'tenant.new.title',
     parent: '/tenant',
     loader: () =>
@@ -67,7 +67,7 @@ const privateRoutes = [
 
   {
     path: '/tenant/:id/edit',
-    collapseName: 'my-profile',
+    collapseName: 'companies',
     i18n: 'tenant.edit.title',
     parent: '/tenant',
     loader: () =>
@@ -79,7 +79,7 @@ const privateRoutes = [
   {
     path: '/user',
     i18n: 'user.menu',
-    collapseName: 'my-profile',
+    collapseName: 'users',
     parent: '/person-name-breadcrumb',
     loader: () => import('src/view/user/list/UserPage'),
     permissionRequired: permissions.userRead,
@@ -89,7 +89,7 @@ const privateRoutes = [
   {
     path: '/user/new',
     i18n: 'user.new.title',
-    collapseName: 'my-profile',
+    collapseName: 'users',
     parent: '/user',
     loader: () => import('src/view/user/new/UserNewPage'),
     permissionRequired: permissions.userCreate,
@@ -99,7 +99,7 @@ const privateRoutes = [
   {
     path: '/user/importer',
     i18n: 'user.importer.title',
-    collapseName: 'my-profile',
+    collapseName: 'users',
     parent: '/user',
     loader: () =>
       import('src/view/user/importer/UserImporterPage'),
@@ -110,7 +110,7 @@ const privateRoutes = [
   {
     path: '/user/:id/edit',
     i18n: 'user.edit.title',
-    collapseName: 'my-profile',
+    collapseName: 'users',
     parent: '/user',
     loader: () => import('src/view/user/edit/UserEditPage'),
     permissionRequired: permissions.userEdit,
@@ -120,7 +120,7 @@ const privateRoutes = [
   {
     path: '/user/:id',
     i18n: 'user.view.title',
-    collapseName: 'my-profile',
+    collapseName: 'users',
     parent: '/user',
     loader: () => import('src/view/user/view/UserViewPage'),
     permissionRequired: permissions.userRead,
