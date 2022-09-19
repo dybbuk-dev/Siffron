@@ -8,6 +8,7 @@ import selectors from 'src/modules/section/sectionSelectors';
 
 function SectionAutocompleteFormItem(props) {
   const { setValue, getValues } = useFormContext();
+  const [rerender, setRerender] = useState(false);
 
   const [modalVisible, setModalVisible] = useState(false);
 
@@ -39,6 +40,7 @@ function SectionAutocompleteFormItem(props) {
       });
     }
 
+    setRerender(!rerender);
     doCloseModal();
   };
 
@@ -94,6 +96,7 @@ function SectionAutocompleteFormItem(props) {
         onChange={onChange}
         onOpenModal={doOpenModal}
         hasPermissionToCreate={hasPermissionToCreate}
+        rerender={rerender}
       />
 
       {modalVisible && (

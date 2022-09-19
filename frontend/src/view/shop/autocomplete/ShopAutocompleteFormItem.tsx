@@ -8,6 +8,7 @@ import selectors from 'src/modules/shop/shopSelectors';
 
 function ShopAutocompleteFormItem(props) {
   const { setValue, getValues } = useFormContext();
+  const [rerender, setRerender] = useState(false);
 
   const [modalVisible, setModalVisible] = useState(false);
 
@@ -39,6 +40,7 @@ function ShopAutocompleteFormItem(props) {
       });
     }
 
+    setRerender(!rerender);
     doCloseModal();
   };
 
@@ -91,6 +93,7 @@ function ShopAutocompleteFormItem(props) {
         mapper={mapper}
         onOpenModal={doOpenModal}
         hasPermissionToCreate={hasPermissionToCreate}
+        rerender={rerender}
       />
 
       {modalVisible && (

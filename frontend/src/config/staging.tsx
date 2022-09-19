@@ -2,10 +2,6 @@
 // Ex.:`https://domain.com/api`;
 const backendUrl = `/api`;
 
-// SwaggerUI Documentation URL
-// Leave black if documentation should be hidden
-const apiDocumentationUrl = `/documentation`;
-
 /**
  * Frontend URL.
  */
@@ -25,6 +21,5 @@ const tenantMode = 'multi-with-subdomain';
 export default {
   frontendUrl,
   backendUrl,
-  apiDocumentationUrl,
   tenantMode,
 };

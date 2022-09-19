@@ -10,7 +10,7 @@ function ShelfAutocompleteFormItem(props) {
   const { setValue, getValues } = useFormContext();
 
   const [modalVisible, setModalVisible] = useState(false);
-  const [rerender, setRerender] = useState(0);
+  const [rerender, setRerender] = useState(false);
 
   const hasPermissionToCreate = useSelector(
     selectors.selectPermissionToCreate,
@@ -40,8 +40,7 @@ function ShelfAutocompleteFormItem(props) {
       });
     }
 
-    setRerender(rerender + 1);
-
+    setRerender(!rerender);
     doCloseModal();
   };
 

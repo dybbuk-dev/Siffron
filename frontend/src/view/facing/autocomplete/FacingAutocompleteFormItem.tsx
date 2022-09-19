@@ -10,7 +10,7 @@ function FacingAutocompleteFormItem(props) {
   const { setValue, getValues } = useFormContext();
 
   const [modalVisible, setModalVisible] = useState(false);
-  const [rerender, setRerender] = useState(0);
+  const [rerender, setRerender] = useState(false);
 
   const hasPermissionToCreate = useSelector(
     selectors.selectPermissionToCreate,
@@ -40,7 +40,7 @@ function FacingAutocompleteFormItem(props) {
       });
     }
 
-    setRerender(rerender + 1);
+    setRerender(!rerender);
 
     doCloseModal();
   };

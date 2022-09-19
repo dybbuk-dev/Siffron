@@ -50,7 +50,7 @@ function DepartmentLayout(props) {
           <ShopAutocompleteFormItem
             name="shop"
             label={i18n('entities.department.fields.shop')}
-            required={false}
+            required={true}
             showCreate={true}
             variant="standard"
             fullWidth

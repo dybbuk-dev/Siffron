@@ -1,11 +1,9 @@
 import { useState } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import { Menu, IconButton, Icon } from '@mui/material';
-import authSelectors from 'src/modules/auth/authSelectors';
 import { getHistory } from 'src/modules/store';
 import authActions from 'src/modules/auth/authActions';
 import { i18n } from 'src/i18n';
-import config from 'src/config';
 
 // Custom styles for Header
 import { navbarIconButton } from 'src/mui/examples/Navbars/DashboardNavbar/styles';
@@ -20,24 +18,10 @@ interface Props {
   isMini?: boolean;
 }
 
-function UserMenu({
-  absolute,
-  light,
-  isMini,
-}: Props): JSX.Element {
+function UserMenu({ light }: Props): JSX.Element {
   const [anchorEl, setAnchorEl] = useState(null);
 
   const dispatch = useDispatch();
-
-  const userText = useSelector(
-    authSelectors.selectCurrentUserNameOrEmailPrefix,
-  );
-  const userAvatar = useSelector(
-    authSelectors.selectCurrentUserAvatar,
-  );
-  const currentTenant = useSelector(
-    authSelectors.selectCurrentTenant,
-  );
 
   const handleClick = (event) => {
     setAnchorEl(event.currentTarget);
@@ -57,10 +41,6 @@ function UserMenu({
 
   const doNavigateToPasswordChange = () => {
     getHistory().push('/password-change');
-  };
-
-  const doNavigateToTenants = () => {
-    getHistory().push('/tenant');
   };
 
   const { transparentNavbar, darkMode } =
@@ -115,25 +95,6 @@ function UserMenu({
           icon={<Icon>lock</Icon>}
           title={i18n('auth.passwordChange.title')}
         />
-        {['multi', 'multi-with-subdomain'].includes(
-          config.tenantMode,
-        ) && (
-          <NotificationItem
-            onClick={doNavigateToTenants}
-            icon={<Icon>apps</Icon>}
-            title={i18n('auth.tenants')}
-          />
-        )}
-        {config.apiDocumentationUrl && (
-          <NotificationItem
-            outlink
-            href={config.apiDocumentationUrl}
-            icon={<Icon>code</Icon>}
-            title={i18n('api.menu')}
-            target="_blank"
-            rel="noopener noreferrer"
-          />
-        )}
         <NotificationItem
           onClick={doSignout}
           icon={<Icon>exit_to_app</Icon>}

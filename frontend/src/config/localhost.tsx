@@ -1,9 +1,5 @@
 const backendUrl = `http://localhost:8080/api`;
 
-// SwaggerUI Documentation URL
-// Leave black if documentation should be hidden
-const apiDocumentationUrl = `http://localhost:8080/documentation`;
-
 /**
  * Frontend Url.
  */
@@ -23,6 +19,5 @@ const tenantMode = 'multi-with-subdomain';
 export default {
   frontendUrl,
   backendUrl,
-  apiDocumentationUrl,
   tenantMode,
 };

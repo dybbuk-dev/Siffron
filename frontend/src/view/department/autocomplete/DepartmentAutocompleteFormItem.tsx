@@ -8,6 +8,7 @@ import selectors from 'src/modules/department/departmentSelectors';
 
 function DepartmentAutocompleteFormItem(props) {
   const { setValue, getValues } = useFormContext();
+  const [rerender, setRerender] = useState(false);
 
   const [modalVisible, setModalVisible] = useState(false);
 
@@ -39,6 +40,7 @@ function DepartmentAutocompleteFormItem(props) {
       });
     }
 
+    setRerender(!rerender);
     doCloseModal();
   };
 
@@ -94,6 +96,7 @@ function DepartmentAutocompleteFormItem(props) {
         belongTo={shop}
         onChange={onChange}
         hasPermissionToCreate={hasPermissionToCreate}
+        rerender={rerender}
       />
 
       {modalVisible && (
