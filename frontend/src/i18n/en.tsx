@@ -322,7 +322,7 @@ const en = {
   },
 
   auth: {
-    tenants: 'Workspaces',
+    tenants: 'Companies',
     profile: {
       title: 'Profile',
       success: 'Profile successfully updated',
@@ -524,7 +524,7 @@ const en = {
   },
   settings: {
     title: 'Settings',
-    tenant: 'Tenant',
+    tenant: 'Company',
     menu: 'Settings',
     save: {
       success:
