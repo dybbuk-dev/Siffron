@@ -1,6 +1,6 @@
 const es = {
   app: {
-    title: 'VOR | GRC - Conciencia informada',
+    title: 'SIFFRON',
   },
   auth: {
     userNotFound:
@@ -42,21 +42,20 @@ const es = {
         'No puede eliminar el administrador del plan.',
     },
   },
+
   tenant: {
     exists:
-      'Ya hay un espacio de trabajo en esta aplicación.',
+      'There is already a company on this application.',
     url: {
-      exists:
-        'Esta URL del espacio de trabajo ya está en uso.',
+      exists: 'This company URL is already in use.',
     },
     invitation: {
-      notSameEmail:
-        'Esta invitación se envió a {0} pero has iniciado sesión como {1}.',
+      notSameEmail: `This invitation was sent to {0} but you're signed in as {1}.`,
     },
-    planActive:
-      'Hay un plan activo para este espacio de trabajo. Por favor, cancele el plan primero.',
-    stripeNotConfigured: 'Stripe no está configurado.',
+    planActive: `There is a plan active for this company. Please cancel the plan first.`,
+    stripeNotConfigured: 'Stripe is not configured.',
   },
+
   importer: {
     errors: {
       invalidFileEmpty: 'El archivo esta vacio',
@@ -96,35 +95,35 @@ const es = {
     shop: {
       errors: {
         unique: {
-          name: 'El nombre debe ser único.',
+          name: 'Name must be unique.',
         },
       },
     },
     department: {
       errors: {
         unique: {
-          name: 'El nombre debe ser único',
+          name: 'Name must be unique.',
         },
       },
     },
     section: {
       errors: {
         unique: {
-          name: 'El nombre debe ser único',
+          name: 'Name must be unique.',
         },
       },
     },
     shelf: {
       errors: {
         unique: {
-          name: 'El nombre debe ser único',
+          name: 'Name must be unique.',
         },
       },
     },
     facing: {
       errors: {
         unique: {
-          sn: 'El número de serie debe ser único.',
+          sn: 'Serial Number must be unique.',
         },
       },
     },

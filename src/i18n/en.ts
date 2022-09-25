@@ -43,14 +43,14 @@ const en = {
 
   tenant: {
     exists:
-      'There is already a workspace on this application.',
+      'There is already a company on this application.',
     url: {
-      exists: 'This workspace URL is already in use.',
+      exists: 'This company URL is already in use.',
     },
     invitation: {
       notSameEmail: `This invitation was sent to {0} but you're signed in as {1}.`,
     },
-    planActive: `There is a plan active for this workspace. Please cancel the plan first.`,
+    planActive: `There is a plan active for this company. Please cancel the plan first.`,
     stripeNotConfigured: 'Stripe is not configured.',
   },
 

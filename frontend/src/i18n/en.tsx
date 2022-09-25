@@ -59,18 +59,6 @@ const en = {
     },
   },
 
-  widgets: {
-    upcomingTasks: {
-      title: 'Upcoming Tasks',
-    },
-    risksSummary: {
-      title: 'Risks',
-    },
-    vendorsSummary: {
-      title: 'Vendors',
-    },
-  },
-
   entities: {
     shop: {
       name: 'store',
@@ -322,7 +310,7 @@ const en = {
   },
 
   auth: {
-    tenants: 'Workspaces',
+    tenants: 'Companies',
     profile: {
       title: 'Profile',
       success: 'Profile successfully updated',
@@ -455,7 +443,7 @@ const en = {
   },
 
   tenant: {
-    name: 'tenant',
+    name: 'company',
     label: 'Companies',
     menu: 'Companies',
     list: {
@@ -522,9 +510,10 @@ const en = {
       createdByEmail: 'User Email',
     },
   },
+
   settings: {
     title: 'Settings',
-    tenant: 'Tenant',
+    tenant: 'Company',
     menu: 'Settings',
     save: {
       success:
@@ -538,6 +527,7 @@ const en = {
       shade: 'Shade',
     },
   },
+
   dashboard: {
     menu: 'Dashboard',
     message: `This page uses fake data for demonstration purposes only. You can edit it at frontend/view/dashboard/DashboardPage.ts.`,
@@ -568,6 +558,7 @@ const en = {
       customer: 'Customer',
     },
   },
+
   errors: {
     backToHome: 'Back to home',
     403: `Sorry, you don't have access to this page`,
@@ -650,6 +641,7 @@ const en = {
     size: 'File is too big. Max allowed size is {0}',
     formats: `Invalid format. Must be one of: {0}.`,
   },
+
   importer: {
     line: 'Line',
     status: 'Status',

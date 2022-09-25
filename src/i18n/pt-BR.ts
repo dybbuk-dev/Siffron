@@ -4,7 +4,7 @@
 
 const ptBR = {
   app: {
-    title: 'VOR | GRC - Consciência Informada',
+    title: 'SIFFRON',
   },
 
   auth: {
@@ -41,15 +41,16 @@ const ptBR = {
   },
 
   tenant: {
-    exists: 'Já existe um inquilino para esta aplicação.',
+    exists:
+      'There is already a company on this application.',
     url: {
-      exists:
-        'Esta URL de área de trabalho já está em uso.',
+      exists: 'This company URL is already in use.',
     },
     invitation: {
-      notSameEmail: `Este convite foi enviado para {0} mas você está acessando como {1}.`,
+      notSameEmail: `This invitation was sent to {0} but you're signed in as {1}.`,
     },
-    planActive: `Existe um plano ativo para esta área de trabalho. Por favor primeiro cancele o plano.`,
+    planActive: `There is a plan active for this company. Please cancel the plan first.`,
+    stripeNotConfigured: 'Stripe is not configured.',
   },
 
   importer: {
@@ -92,35 +93,35 @@ const ptBR = {
     shop: {
       errors: {
         unique: {
-          name: 'O nome deve ser único.',
+          name: 'Name must be unique.',
         },
       },
     },
     department: {
       errors: {
         unique: {
-          name: 'O nome deve ser único.',
+          name: 'Name must be unique.',
         },
       },
     },
     section: {
       errors: {
         unique: {
-          name: 'O nome deve ser único.',
+          name: 'Name must be unique.',
         },
       },
     },
     shelf: {
       errors: {
         unique: {
-          name: 'O nome deve ser único.',
+          name: 'Name must be unique.',
         },
       },
     },
     facing: {
       errors: {
         unique: {
-          sn: 'O número de série deve ser único.',
+          sn: 'Serial Number must be unique.',
         },
       },
     },

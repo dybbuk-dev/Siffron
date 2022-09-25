@@ -1,6 +1,5 @@
-# VOR | GRC - Informed Awareness
+# Siffron
 
-Visit https://docs.scaffoldhub.io for docs/instructions.
 Version: 2.7.8
 
 # Installation Guide

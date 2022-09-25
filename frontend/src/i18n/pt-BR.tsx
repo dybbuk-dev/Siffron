@@ -27,7 +27,7 @@ const ptBR = {
   },
 
   app: {
-    title: 'VOR | GRC - Consciência Informada',
+    title: 'Siffron',
   },
 
   api: {
@@ -36,7 +36,7 @@ const ptBR = {
 
   mui: {
     configurator: {
-      title: 'Configurador de Material UI',
+      title: 'Configurador de painel',
       description: 'Veja nossas opções de painel.',
       sidenavColor: 'Cores',
       sidenavType: {
@@ -54,1219 +54,257 @@ const ptBR = {
   },
 
   collapses: {
-    reports: {
-      menu: 'Reports',
-    },
-    tasks: {
-      menu: 'Tasks',
-    },
-    vendors: {
-      menu: 'Vendors',
-    },
-    risks: {
-      menu: 'Risks',
-    },
-    marketplace: {
-      menu: 'Marketplace',
-    },
-  },
-
-  reports: {
-    tasksByMonth: {
-      menu: 'Tasks By Month',
-    },
-  },
-
-  widgets: {
-    tasksByMonth: {
-      title: 'Tasks By Month',
-    },
-    tasksOnCalendar: {
-      title: 'Calendar',
-      modals: {
-        recurring: {
-          title: 'Recurring Task On {0}',
-        },
-        edit: {
-          title: 'Edit Task',
-        },
-        new: {
-          title: 'New Task On {0}',
-        },
-      },
-    },
-    tasksSummary: {
-      title: 'Tasks',
-    },
-    upcomingTasks: {
-      title: 'Upcoming Tasks',
-    },
-    risksSummary: {
-      title: 'Risks',
+    management: {
+      menu: 'Management',
     },
   },
 
   entities: {
-    vendor: {
-      name: 'Vendor',
-      label: 'Vendors',
-      menu: 'Vendor Register',
-      info: 'Vendor Information',
-      exporterFileName: 'Vendor_exportados',
+    shop: {
+      name: 'store',
+      label: 'Store',
+      menu: 'Store',
+      exporterFileName: 'store_export',
       list: {
-        menu: 'Vendors',
-        title: 'Vendors',
+        menu: 'Store',
+        title: 'Store',
       },
       create: {
-        success: 'Vendor salvo com sucesso',
+        success: 'Store successfully saved',
       },
       update: {
-        success: 'Vendor salvo com sucesso',
+        success: 'Store successfully saved',
       },
       destroy: {
-        success: 'Vendor deletado com sucesso',
+        success: 'Store successfully deleted',
       },
       destroyAll: {
-        success: 'Vendor(s) deletado com sucesso',
-      },
-      sections: {
-        about: 'About',
-        business: 'Business',
-        contractInformation: 'Contract Information',
-        compliance: 'Compliance',
-        risks: 'Risks',
-        tasks: 'Tasks',
+        success: 'Store(s) successfully deleted',
       },
       edit: {
-        title: 'Editar Vendor',
-      },
-      fields: {
-        id: 'Id',
-        referenceRange: 'Ref #',
-        reference: 'Ref #',
-        name: 'Name',
-        status: 'Status',
-        category: 'Category',
-        rating: 'Rating',
-        primaryContactName: 'Primary Contact Name',
-        primaryContactEmail: 'Primary Contact Email',
-        primaryContactPhoneNumber:
-          'Primary Contact Phone Number',
-        countryOfIncorporation: 'Country of Incorporation',
-        dataProcessed: 'Data Processed',
-        industry: 'Industry',
-        supportEmail: 'Support Email',
-        supportPhoneNumber: 'Support Phone Number',
-        internalBusinessSponsor:
-          'Internal Business Sponsor',
-        descriptionOfServices: 'Description Of Services',
-        logo: 'Logo',
-        website: 'Website',
-        address: 'Address',
-        contract: 'Contract',
-        documentation: 'Documentation',
-        dpiaCompleted: 'DPIA Completed',
-        dtiaCompleted: 'DTIA Completed',
-        iso27001: 'ISO 27001',
-        soc1: 'SOC1',
-        soc2: 'SOC2',
-        hippa: 'HIPPA',
-        pcidss: 'PCI DSS',
-        fedramp: 'FedRAMP',
-        gdpr: 'GDPR',
-        ccpa: 'CCPA',
-        sox: 'SOX',
-        cobit: 'COBIT',
-        risks: 'Risks',
-        tasks: 'Tasks',
-        createdAt: 'Criado em',
-        updatedAt: 'Atualizado em',
-        createdAtRange: 'Criado em',
-      },
-      enumerators: {
-        status: {
-          Active: 'Active',
-          Inactive: 'Inactive',
-        },
-        rating: {
-          Critical: 'Critical',
-          High: 'High',
-          Medium: 'Medium',
-          Low: 'Low',
-          None: 'None',
-        },
-        countryOfIncorporation: {
-          UK: 'UK',
-          US: 'US',
-        },
-        dataProcessed: {
-          None: 'None',
-          PII: 'PII',
-          'GDPR Special Categories':
-            'GDPR Special Categories',
-          Confidential: 'Confidential',
-          'Highly Classified': 'Highly Classified',
-        },
-        industry: {
-          Accounting: 'Accounting',
-          'Airlines/Aviation': 'Airlines/Aviation',
-          'Alternative Dispute Resolution':
-            'Alternative Dispute Resolution',
-          'Alternative Medicine': 'Alternative Medicine',
-          Animation: 'Animation',
-          'Apparel & Fashion': 'Apparel & Fashion',
-          'Architecture & Planning':
-            'Architecture & Planning',
-          'Arts and Crafts': 'Arts and Crafts',
-          Automotive: 'Automotive',
-          'Aviation & Aerospace': 'Aviation & Aerospace',
-          Banking: 'Banking',
-          Biotechnology: 'Biotechnology',
-          'Broadcast Media': 'Broadcast Media',
-          'Building Materials': 'Building Materials',
-          'Business Supplies and Equipment':
-            'Business Supplies and Equipment',
-          'Capital Markets': 'Capital Markets',
-          Chemicals: 'Chemicals',
-          'Civic & Social Organization':
-            'Civic & Social Organization',
-          'Civil Engineering': 'Civil Engineering',
-          'Commercial Real Estate':
-            'Commercial Real Estate',
-          'Computer & Network Security':
-            'Computer & Network Security',
-          'Computer Games': 'Computer Games',
-          'Computer Hardware': 'Computer Hardware',
-          'Computer Networking': 'Computer Networking',
-          'Computer Software': 'Computer Software',
-          Construction: 'Construction',
-          'Consumer Electronics': 'Consumer Electronics',
-          'Consumer Goods': 'Consumer Goods',
-          'Consumer Services': 'Consumer Services',
-          Cosmetics: 'Cosmetics',
-          Dairy: 'Dairy',
-          'Defense & Space': 'Defense & Space',
-          Design: 'Design',
-          'Education Management': 'Education Management',
-          'E-Learning': 'E-Learning',
-          'Electrical/Electronic Manufacturing':
-            'Electrical/Electronic Manufacturing',
-          Entertainment: 'Entertainment',
-          'Environmental Services':
-            'Environmental Services',
-          'Events Services': 'Events Services',
-          'Executive Office': 'Executive Office',
-          'Facilities Services': 'Facilities Services',
-          Farming: 'Farming',
-          'Financial Services': 'Financial Services',
-          'Fine Art': 'Fine Art',
-          Fishery: 'Fishery',
-          'Food & Beverages': 'Food & Beverages',
-          'Food Production': 'Food Production',
-          'Fund-Raising': 'Fund-Raising',
-          Furniture: 'Furniture',
-          'Gambling & Casinos': 'Gambling & Casinos',
-          Glass: 'Glass',
-          'Ceramics & Concrete': 'Ceramics & Concrete',
-          'Government Administration':
-            'Government Administration',
-          'Government Relations': 'Government Relations',
-          'Graphic Design': 'Graphic Design',
-          Health: 'Health',
-          'Wellness and Fitness': 'Wellness and Fitness',
-          'Higher Education': 'Higher Education',
-          Horticulture: 'Horticulture',
-          'Hospital & Health Care':
-            'Hospital & Health Care',
-          Hospitality: 'Hospitality',
-          'Human Resources': 'Human Resources',
-          'Import and Export': 'Import and Export',
-          'Individual & Family Services':
-            'Individual & Family Services',
-          'Industrial Automation': 'Industrial Automation',
-          'Information Services': 'Information Services',
-          'Information Technology and Services':
-            'Information Technology and Services',
-          Insurance: 'Insurance',
-          'International Affairs': 'International Affairs',
-          'International Trade and Development':
-            'International Trade and Development',
-          Internet: 'Internet',
-          'Investment Banking': 'Investment Banking',
-          'Investment Management': 'Investment Management',
-          Judiciary: 'Judiciary',
-          'Law Enforcement': 'Law Enforcement',
-          'Law Practice': 'Law Practice',
-          'Legal Services': 'Legal Services',
-          'Legislative Office': 'Legislative Office',
-          Leisure: 'Leisure',
-          'Travel & Tourism': 'Travel & Tourism',
-          Libraries: 'Libraries',
-          'Logistics and Supply Chain':
-            'Logistics and Supply Chain',
-          'Luxury Goods & Jewelry':
-            'Luxury Goods & Jewelry',
-          Machinery: 'Machinery',
-          'Management Consulting': 'Management Consulting',
-          Maritime: 'Maritime',
-          'Market Research': 'Market Research',
-          'Marketing and Advertising':
-            'Marketing and Advertising',
-          'Mechanical or Industrial Engineering':
-            'Mechanical or Industrial Engineering',
-          'Media Production': 'Media Production',
-          'Medical Devices': 'Medical Devices',
-          'Medical Practice': 'Medical Practice',
-          'Mental Health Care': 'Mental Health Care',
-          Military: 'Military',
-          'Mining & Metals': 'Mining & Metals',
-          'Mobile Games': 'Mobile Games',
-          'Motion Pictures and Film':
-            'Motion Pictures and Film',
-          'Museums and Institutions':
-            'Museums and Institutions',
-          Music: 'Music',
-          Nanotechnology: 'Nanotechnology',
-          Newspapers: 'Newspapers',
-          'Non-Profit Organization Management':
-            'Non-Profit Organization Management',
-          'Oil & Energy': 'Oil & Energy',
-          'Online Media': 'Online Media',
-          'Outsourcing/Offshoring':
-            'Outsourcing/Offshoring',
-          'Package/Freight Delivery':
-            'Package/Freight Delivery',
-          'Packaging and Containers':
-            'Packaging and Containers',
-          'Paper & Forest Products':
-            'Paper & Forest Products',
-          'Performing Arts': 'Performing Arts',
-          Pharmaceuticals: 'Pharmaceuticals',
-          Philanthropy: 'Philanthropy',
-          Photography: 'Photography',
-          Plastics: 'Plastics',
-          'Political Organization':
-            'Political Organization',
-          'Primary/Secondary Education':
-            'Primary/Secondary Education',
-          Printing: 'Printing',
-          'Professional Training & Coaching':
-            'Professional Training & Coaching',
-          'Program Development': 'Program Development',
-          'Public Policy': 'Public Policy',
-          'Public Relations and Communications':
-            'Public Relations and Communications',
-          'Public Safety': 'Public Safety',
-          Publishing: 'Publishing',
-          'Railroad Manufacture': 'Railroad Manufacture',
-          Ranching: 'Ranching',
-          'Real Estate': 'Real Estate',
-          'Recreational Facilities and Services':
-            'Recreational Facilities and Services',
-          'Religious Institutions':
-            'Religious Institutions',
-          'Renewables & Environment':
-            'Renewables & Environment',
-          Research: 'Research',
-          Restaurants: 'Restaurants',
-          Retail: 'Retail',
-          'Security and Investigations':
-            'Security and Investigations',
-          Semiconductors: 'Semiconductors',
-          Shipbuilding: 'Shipbuilding',
-          'Sporting Goods': 'Sporting Goods',
-          Sports: 'Sports',
-          'Staffing and Recruiting':
-            'Staffing and Recruiting',
-          Supermarkets: 'Supermarkets',
-          Telecommunications: 'Telecommunications',
-          Textiles: 'Textiles',
-          'Think Tanks': 'Think Tanks',
-          Tobacco: 'Tobacco',
-          'Translation and Localization':
-            'Translation and Localization',
-          'Transportation/Trucking/Railroad':
-            'Transportation/Trucking/Railroad',
-          Utilities: 'Utilities',
-          'Venture Capital & Private Equity':
-            'Venture Capital & Private Equity',
-          Veterinary: 'Veterinary',
-          Warehousing: 'Warehousing',
-          Wholesale: 'Wholesale',
-          'Wine and Spirits': 'Wine and Spirits',
-          Wireless: 'Wireless',
-          'Writing and Editing': 'Writing and Editing',
-        },
-      },
-      placeholders: {},
-      hints: {},
-      new: {
-        title: 'Novo Vendor',
-      },
-      view: {
-        title: 'Visualizar Vendor',
-      },
-      importer: {
-        title: 'Importar Vendors',
-        fileName: 'vendor_template_importacao',
-        hint: 'Arquivos/Imagens devem ser as URLs dos arquivos, separados por espaço. Relacionamentos devem ser os IDs separados por espaço.',
-      },
-    },
-
-    vendorCategory: {
-      name: 'Vendor Category',
-      label: 'Vendor Categories',
-      menu: 'Vendor Categories',
-      exporterFileName: 'Vendor Category_exportados',
-      list: {
-        menu: 'Vendor Categories',
-        title: 'Vendor Categories',
-      },
-      create: {
-        success: 'Vendor Category salvo com sucesso',
-      },
-      update: {
-        success: 'Vendor Category salvo com sucesso',
-      },
-      destroy: {
-        success: 'Vendor Category deletado com sucesso',
-      },
-      destroyAll: {
-        success: 'Vendor Category(s) deletado com sucesso',
-      },
-      edit: {
-        title: 'Editar Vendor Category',
+        title: 'Edit Store',
       },
       fields: {
         id: 'Id',
         name: 'Name',
-        createdAt: 'Criado em',
-        updatedAt: 'Atualizado em',
-        createdAtRange: 'Criado em',
+        manager: 'Manager',
+        createdAt: 'Created at',
+        updatedAt: 'Updated at',
       },
       enumerators: {},
       placeholders: {},
       hints: {},
       new: {
-        title: 'Novo Vendor Category',
+        title: 'New Store',
       },
       view: {
-        title: 'Visualizar Vendor Category',
+        title: 'View Store',
       },
       importer: {
-        title: 'Importar Vendor Categories',
-        fileName: 'vendorCategory_template_importacao',
-        hint: 'Arquivos/Imagens devem ser as URLs dos arquivos, separados por espaço. Relacionamentos devem ser os IDs separados por espaço.',
+        title: 'Import Stores',
+        fileName: 'department_import_template',
+        hint: 'Files/Images columns must be the URLs of the files separated by space.',
       },
     },
 
-    task: {
-      name: 'Task',
-      label: 'Tasks',
-      menu: 'Task Register',
-      info: 'Task Information',
-      instances: 'Task Instances',
-      exporterFileName: 'Task_exportados',
+    department: {
+      name: 'department',
+      label: 'Department',
+      menu: 'Department',
+      exporterFileName: 'department_export',
       list: {
-        menu: 'Tasks',
-        title: 'Tasks',
+        menu: 'Department',
+        title: 'Department',
       },
       create: {
-        success: 'Task salvo com sucesso',
+        success: 'Department successfully saved',
       },
       update: {
-        success: 'Task salvo com sucesso',
+        success: 'Department successfully saved',
       },
       destroy: {
-        success: 'Task deletado com sucesso',
+        success: 'Department successfully deleted',
       },
       destroyAll: {
-        success: 'Task(s) deletado com sucesso',
+        success: 'Department(s) successfully deleted',
       },
       edit: {
-        title: 'Editar Task',
-      },
-      states: {
-        created: 'Created',
-        completed: 'Completed',
-        overdue: 'Completed overdue',
-        notCompleted: 'Not completed in time',
-      },
-      fields: {
-        id: 'Id',
-        referenceRange: 'Ref #',
-        reference: 'Ref #',
-        title: 'Title',
-        taskList: 'Task List',
-        instructions: 'Instructions',
-        notes: 'Notes',
-        priority: 'Priority',
-        repeat: 'Repeat',
-        status: 'Status',
-        owner: 'Owner',
-        approver: 'Approver',
-        dueDateRange: 'Due Date',
-        dueDate: 'Due Date',
-        completedDateRange: 'Completed Date',
-        completedDate: 'Completed Date',
-        attachments: 'Attachments',
-        createdAt: 'Criado em',
-        updatedAt: 'Atualizado em',
-        createdAtRange: 'Criado em',
-      },
-      enumerators: {
-        repeat: {
-          Never: 'Never',
-          Daily: 'Daily',
-          Weekdays: 'Weekdays',
-          Weekends: 'Weekends',
-          Weekly: 'Weekly',
-          Biweekly: 'Biweekly',
-          Monthly: 'Monthly',
-          'Every 3 Months': 'Every 3 Months',
-          'Every 6 Months': 'Every 6 Months',
-          Annually: 'Annually',
-        },
-        status: {
-          Backlog: 'Backlog',
-          ToDo: 'ToDo',
-          'In progress': 'In progress',
-          Complete: 'Complete',
-        },
-      },
-      placeholders: {},
-      hints: {},
-      new: {
-        title: 'Novo Task',
-      },
-      view: {
-        title: 'Visualizar Task',
-      },
-      importer: {
-        title: 'Importar Tasks',
-        fileName: 'task_template_importacao',
-        hint: 'Arquivos/Imagens devem ser as URLs dos arquivos, separados por espaço. Relacionamentos devem ser os IDs separados por espaço.',
-      },
-    },
-
-    taskPriority: {
-      name: 'Task Priority',
-      label: 'Task Priorities',
-      menu: 'Task Priorities',
-      exporterFileName: 'Task Priority_exportados',
-      list: {
-        menu: 'Task Priorities',
-        title: 'Task Priorities',
-      },
-      create: {
-        success: 'Task Priority salvo com sucesso',
-      },
-      update: {
-        success: 'Task Priority salvo com sucesso',
-      },
-      destroy: {
-        success: 'Task Priority deletado com sucesso',
-      },
-      destroyAll: {
-        success: 'Task Priority(s) deletado com sucesso',
-      },
-      edit: {
-        title: 'Editar Task Priority',
-      },
-      fields: {
-        id: 'Id',
-        priority: 'Priority',
-        createdAt: 'Criado em',
-        updatedAt: 'Atualizado em',
-        createdAtRange: 'Criado em',
-      },
-      enumerators: {},
-      placeholders: {},
-      hints: {},
-      new: {
-        title: 'Novo Task Priority',
-      },
-      view: {
-        title: 'Visualizar Task Priority',
-      },
-      importer: {
-        title: 'Importar Task Priorities',
-        fileName: 'taskPriority_template_importacao',
-        hint: 'Arquivos/Imagens devem ser as URLs dos arquivos, separados por espaço. Relacionamentos devem ser os IDs separados por espaço.',
-      },
-    },
-
-    taskList: {
-      name: 'Task List',
-      label: 'Task Lists',
-      menu: 'Task Lists',
-      exporterFileName: 'Task List_exportados',
-      list: {
-        menu: 'Task Lists',
-        title: 'Task Lists',
-      },
-      create: {
-        success: 'Task List salvo com sucesso',
-      },
-      update: {
-        success: 'Task List salvo com sucesso',
-      },
-      destroy: {
-        success: 'Task List deletado com sucesso',
-      },
-      destroyAll: {
-        success: 'Task List(s) deletado com sucesso',
-      },
-      edit: {
-        title: 'Editar Task List',
+        title: 'Edit Department',
       },
       fields: {
         id: 'Id',
         name: 'Name',
-        taskdisplaycolor: 'Display Color',
-        createdAt: 'Criado em',
-        updatedAt: 'Atualizado em',
-        createdAtRange: 'Criado em',
-      },
-      enumerators: {
-        taskdisplaycolor: {
-          red: 'Red',
-          orange: 'Orange',
-          yellow: 'Yellow',
-          green: 'Green',
-          blue: 'Blue',
-          indigo: 'Indigo',
-          violet: 'Violet',
-        },
-      },
-      placeholders: {},
-      hints: {},
-      new: {
-        title: 'Novo Task List',
-      },
-      view: {
-        title: 'Visualizar Task List',
-      },
-      importer: {
-        title: 'Importar Task Lists',
-        fileName: 'taskList_template_importacao',
-        hint: 'Arquivos/Imagens devem ser as URLs dos arquivos, separados por espaço. Relacionamentos devem ser os IDs separados por espaço.',
-      },
-    },
-
-    note: {
-      name: 'Note',
-      label: 'Notes',
-      menu: 'Notes',
-      exporterFileName: 'Note_exportados',
-      list: {
-        menu: 'Notes',
-        title: 'Notes',
-      },
-      create: {
-        success: 'Note salvo com sucesso',
-      },
-      update: {
-        success: 'Note salvo com sucesso',
-      },
-      destroy: {
-        success: 'Note deletado com sucesso',
-      },
-      destroyAll: {
-        success: 'Note(s) deletado com sucesso',
-      },
-      edit: {
-        title: 'Editar Note',
-      },
-      fields: {
-        id: 'Id',
-        message: 'Message',
-        createdAt: 'Criado em',
-        updatedAt: 'Atualizado em',
-        createdAtRange: 'Criado em',
+        shop: 'Shop',
+        createdAt: 'Created at',
+        updatedAt: 'Updated at',
       },
       enumerators: {},
       placeholders: {},
       hints: {},
       new: {
-        title: 'Novo Note',
+        title: 'New Department',
       },
       view: {
-        title: 'Visualizar Note',
+        title: 'View Department',
       },
       importer: {
-        title: 'Importar Notes',
-        fileName: 'note_template_importacao',
-        hint: 'Arquivos/Imagens devem ser as URLs dos arquivos, separados por espaço. Relacionamentos devem ser os IDs separados por espaço.',
+        title: 'Import Departments',
+        fileName: 'department_import_template',
+        hint: 'Files/Images columns must be the URLs of the files separated by space.',
       },
     },
 
-    risk: {
-      name: 'Risk',
-      label: 'Risks',
-      menu: 'Risk Register',
-      info: 'Risk Information',
-      exporterFileName: 'Risk_exportados',
+    section: {
+      name: 'section',
+      label: 'Section',
+      menu: 'Section',
+      exporterFileName: 'section_export',
       list: {
-        menu: 'Risks',
-        title: 'Risks',
+        menu: 'Section',
+        title: 'Section',
       },
       create: {
-        success: 'Risk salvo com sucesso',
+        success: 'Section successfully saved',
       },
       update: {
-        success: 'Risk salvo com sucesso',
+        success: 'Section successfully saved',
       },
       destroy: {
-        success: 'Risk deletado com sucesso',
+        success: 'Section successfully deleted',
       },
       destroyAll: {
-        success: 'Risk(s) deletado com sucesso',
+        success: 'Section(s) successfully deleted',
       },
       edit: {
-        title: 'Editar Risk',
-      },
-      fields: {
-        id: 'Id',
-        referenceRange: 'Ref #',
-        reference: 'Ref #',
-        title: 'Title',
-        description: 'Description',
-        category: 'Category',
-        status: 'Status',
-        owner: 'Owner',
-        likelihood: 'Likelihood',
-        impact: 'Impact',
-        inherentScoreRange: 'Inherent Score',
-        inherentScore: 'Inherent Score',
-        residualScoreRange: 'Residual Score',
-        residualScore: 'Residual Score',
-        costRange: 'Cost',
-        cost: 'Cost',
-        mitigationPlan: 'Mitigation Plan',
-        tasks: 'Tasks',
-        createdAt: 'Criado em',
-        updatedAt: 'Atualizado em',
-        createdAtRange: 'Criado em',
-      },
-      enumerators: {
-        status: {
-          Open: 'Open',
-          Acceptance: 'Acceptance',
-          Avoidance: 'Avoidance',
-          Mitigation: 'Mitigation',
-          Remediation: 'Remediation',
-          Transfer: 'Transfer',
-        },
-        likelihood: {
-          'Very Unlikely 1-10%': 'Very Unlikely 1-10%',
-          'Unlikely 11-30%': 'Unlikely 11-30%',
-          'Possible 31-50%': 'Possible 31-50%',
-          'Likely 51-80%': 'Likely 51-80%',
-          'Very Likely > 80%': 'Very Likely > 80%',
-        },
-        impact: {
-          Negligible: 'Negligible',
-          Minor: 'Minor',
-          Moderate: 'Moderate',
-          Significant: 'Significant',
-          Severe: 'Severe',
-        },
-        inherentScore: {
-          Low: 'Low',
-          'Low Med': 'Low Medium',
-          Medium: 'Medium',
-          'Med Hi': 'Medium High',
-          High: 'High',
-        },
-      },
-      placeholders: {},
-      hints: {},
-      new: {
-        title: 'Novo Risk',
-      },
-      view: {
-        title: 'Visualizar Risk',
-      },
-      importer: {
-        title: 'Importar Risks',
-        fileName: 'risk_template_importacao',
-        hint: 'Arquivos/Imagens devem ser as URLs dos arquivos, separados por espaço. Relacionamentos devem ser os IDs separados por espaço.',
-      },
-    },
-
-    riskCategory: {
-      name: 'Risk Category',
-      label: 'Risk Categories',
-      menu: 'Risk Categories',
-      exporterFileName: 'Risk Category_exportados',
-      list: {
-        menu: 'Risk Categories',
-        title: 'Risk Categories',
-      },
-      create: {
-        success: 'Risk Category salvo com sucesso',
-      },
-      update: {
-        success: 'Risk Category salvo com sucesso',
-      },
-      destroy: {
-        success: 'Risk Category deletado com sucesso',
-      },
-      destroyAll: {
-        success: 'Risk Category(s) deletado com sucesso',
-      },
-      edit: {
-        title: 'Editar Risk Category',
+        title: 'Edit Section',
       },
       fields: {
         id: 'Id',
         name: 'Name',
-        createdAt: 'Criado em',
-        updatedAt: 'Atualizado em',
-        createdAtRange: 'Criado em',
+        shop: 'Shop',
+        department: 'Department',
+        createdAt: 'Created at',
+        updatedAt: 'Updated at',
       },
       enumerators: {},
       placeholders: {},
       hints: {},
       new: {
-        title: 'Novo Risk Category',
+        title: 'New Section',
       },
       view: {
-        title: 'Visualizar Risk Category',
+        title: 'View Section',
       },
       importer: {
-        title: 'Importar Risk Categories',
-        fileName: 'riskCategory_template_importacao',
-        hint: 'Arquivos/Imagens devem ser as URLs dos arquivos, separados por espaço. Relacionamentos devem ser os IDs separados por espaço.',
+        title: 'Import Sections',
+        fileName: 'section_import_template',
+        hint: 'Files/Images columns must be the URLs of the files separated by space.',
       },
     },
 
-    product: {
-      name: 'Product',
-      label: 'Products',
-      menu: 'Products',
-      info: 'Product Information',
-      exporterFileName: 'Product_exportados',
+    shelf: {
+      name: 'shelf',
+      label: 'Shelf',
+      menu: 'Shelf',
+      exporterFileName: 'shelf_export',
       list: {
-        menu: 'Products',
-        title: 'Products',
+        menu: 'Shelf',
+        title: 'Shelf',
       },
       create: {
-        success: 'Product salvo com sucesso',
+        success: 'Shelf successfully saved',
       },
       update: {
-        success: 'Product salvo com sucesso',
+        success: 'Shelf successfully saved',
       },
       destroy: {
-        success: 'Product deletado com sucesso',
+        success: 'Shelf successfully deleted',
       },
       destroyAll: {
-        success: 'Product(s) deletado com sucesso',
+        success: 'Shelf(s) successfully deleted',
       },
       edit: {
-        title: 'Editar Product',
-      },
-      fields: {
-        id: 'Id',
-        referenceRange: 'Ref #',
-        reference: 'Ref #',
-        title: 'Title',
-        description: 'Description',
-        category: 'Category',
-        website: 'Website',
-        logo: 'Logo',
-        ratingRange: 'Rating',
-        rating: 'Rating',
-        popularityRange: 'Popularity',
-        popularity: 'Popularity',
-        createdAt: 'Criado em',
-        updatedAt: 'Atualizado em',
-        createdAtRange: 'Criado em',
-      },
-      enumerators: {},
-      placeholders: {},
-      hints: {},
-      new: {
-        title: 'Novo Product',
-      },
-      view: {
-        title: 'Visualizar Product',
-      },
-      importer: {
-        title: 'Importar Products',
-        fileName: 'product_template_importacao',
-        hint: 'Arquivos/Imagens devem ser as URLs dos arquivos, separados por espaço. Relacionamentos devem ser os IDs separados por espaço.',
-      },
-    },
-
-    productCategory: {
-      name: 'Product Category',
-      label: 'Product Categories',
-      menu: 'Product Categories',
-      exporterFileName: 'Product Category_exportados',
-      list: {
-        menu: 'Product Categories',
-        title: 'Product Categories',
-      },
-      create: {
-        success: 'Product Category salvo com sucesso',
-      },
-      update: {
-        success: 'Product Category salvo com sucesso',
-      },
-      destroy: {
-        success: 'Product Category deletado com sucesso',
-      },
-      destroyAll: {
-        success: 'Product Category(s) deletado com sucesso',
-      },
-      edit: {
-        title: 'Editar Product Category',
+        title: 'Edit Shelf',
       },
       fields: {
         id: 'Id',
         name: 'Name',
-        createdAt: 'Criado em',
-        updatedAt: 'Atualizado em',
-        createdAtRange: 'Criado em',
+        shop: 'Shop',
+        department: 'Department',
+        section: 'Section',
+        createdAt: 'Created at',
+        updatedAt: 'Updated at',
       },
       enumerators: {},
       placeholders: {},
       hints: {},
       new: {
-        title: 'Novo Product Category',
+        title: 'New Shelf',
       },
       view: {
-        title: 'Visualizar Product Category',
+        title: 'View Shelf',
       },
       importer: {
-        title: 'Importar Product Categories',
-        fileName: 'productCategory_template_importacao',
-        hint: 'Arquivos/Imagens devem ser as URLs dos arquivos, separados por espaço. Relacionamentos devem ser os IDs separados por espaço.',
+        title: 'Import Shelves',
+        fileName: 'shelf_import_template',
+        hint: 'Files/Images columns must be the URLs of the files separated by space.',
       },
     },
 
-    organizationProfile: {
-      name: 'Organization Profile',
-      label: 'Organization Profiles',
-      menu: 'Organization Profile',
-      exporterFileName: 'Organization Profile_exportados',
+    facing: {
+      name: 'facing',
+      label: 'Facing',
+      menu: 'Facing',
+      exporterFileName: 'facing_export',
       list: {
-        menu: 'Organization Profiles',
-        title: 'Organization Profiles',
+        menu: 'Facing',
+        title: 'Facing',
       },
       create: {
-        success: 'Organization Profile salvo com sucesso',
+        success: 'Facing successfully saved',
       },
       update: {
-        success: 'Organization Profile salvo com sucesso',
+        success: 'Facing successfully saved',
       },
       destroy: {
-        success:
-          'Organization Profile deletado com sucesso',
+        success: 'Facing successfully deleted',
       },
       destroyAll: {
-        success:
-          'Organization Profile(s) deletado com sucesso',
+        success: 'Facing(s) successfully deleted',
       },
       edit: {
-        title: 'Editar Organization Profile',
-      },
-      sections: {
-        about: 'About',
-        compliance: 'Compliance',
-        technology: 'Technology',
-        securityProgram: 'Security Program',
+        title: 'Edit Facing',
       },
       fields: {
         id: 'Id',
-        companyName: 'Company Name',
-        industry:
-          'Please provide the industry for your business?',
-        employee:
-          'Please provide the count of employees working full time in your business?',
-        thirdParties:
-          'Please provide the number of third parties/suppliers for your business',
-        locationRange:
-          'Please provide the number of locations for your business',
-        location:
-          'Please provide the number of locations for your business',
-        regulatoryCompliance:
-          'Please provide a list of regulatory and compliance requirements',
-        technologyStack: 'Technology Stack',
-        outsourcedIT:
-          'Is your IT operations outsourced to a Managed Service Provider?',
-        outsourcedSecurityOperations:
-          'Do you have any Security Operations outsourced?',
-        pastIncidents:
-          'Please provide a list of security incidents that impacted your business in the past year',
-        cspSecurityPolicies:
-          'Do you have a security policies published and accepted by all employees?',
-        cspListITAssets:
-          'Do you have a list of all IT applications and assets?',
-        cspJobRoleInfoSecTraining:
-          'Do you perform job role based security training for your employees?',
-        cspIncidentMgmtPlan:
-          'Are you aware of what activities are to be done during a cybersecurity incident?',
-        cspIncidentVendorNotification:
-          'If your suppliers/third parties gets breached, do you have a way to find out?',
-        cspCyberInsurance:
-          'Do you have a cyber insurance policy?',
-        cspLatestCyberAwarenessThreats:
-          'Do you have sources to be up to date about latest cybersecurity threats and trends affecting your industry?',
-        cspMFAUtilized:
-          'Do you use Multi Factor authentication for *all* your critical applications?',
-        cspSecurityTesting:
-          'Have you conducted security testing for your organization?',
-        cspBackupStrategy:
-          'Do you perform regular backups across emails, servers, laptops?',
-        createdAt: 'Criado em',
-        updatedAt: 'Atualizado em',
-        createdAtRange: 'Criado em',
+        model: 'Model',
+        type: 'Type',
+        sn: 'Serial Number',
+        shop: 'Shop',
+        department: 'Department',
+        section: 'Section',
+        shelf: 'Shelf',
+        createdAt: 'Created at',
+        updatedAt: 'Updated at',
       },
       enumerators: {
-        industry: {
-          Accounting: 'Accounting',
-          'Airlines/Aviation': 'Airlines/Aviation',
-          'Alternative Dispute Resolution':
-            'Alternative Dispute Resolution',
-          'Alternative Medicine': 'Alternative Medicine',
-          Animation: 'Animation',
-          'Apparel & Fashion': 'Apparel & Fashion',
-          'Architecture & Planning':
-            'Architecture & Planning',
-          'Arts and Crafts': 'Arts and Crafts',
-          Automotive: 'Automotive',
-          'Aviation & Aerospace': 'Aviation & Aerospace',
-          Banking: 'Banking',
-          Biotechnology: 'Biotechnology',
-          'Broadcast Media': 'Broadcast Media',
-          'Building Materials': 'Building Materials',
-          'Business Supplies and Equipment':
-            'Business Supplies and Equipment',
-          'Capital Markets': 'Capital Markets',
-          Chemicals: 'Chemicals',
-          'Civic & Social Organization':
-            'Civic & Social Organization',
-          'Civil Engineering': 'Civil Engineering',
-          'Commercial Real Estate':
-            'Commercial Real Estate',
-          'Computer & Network Security':
-            'Computer & Network Security',
-          'Computer Games': 'Computer Games',
-          'Computer Hardware': 'Computer Hardware',
-          'Computer Networking': 'Computer Networking',
-          'Computer Software': 'Computer Software',
-          Construction: 'Construction',
-          'Consumer Electronics': 'Consumer Electronics',
-          'Consumer Goods': 'Consumer Goods',
-          'Consumer Services': 'Consumer Services',
-          Cosmetics: 'Cosmetics',
-          Dairy: 'Dairy',
-          'Defense & Space': 'Defense & Space',
-          Design: 'Design',
-          'Education Management': 'Education Management',
-          'E-Learning': 'E-Learning',
-          'Electrical/Electronic Manufacturing':
-            'Electrical/Electronic Manufacturing',
-          Entertainment: 'Entertainment',
-          'Environmental Services':
-            'Environmental Services',
-          'Events Services': 'Events Services',
-          'Executive Office': 'Executive Office',
-          'Facilities Services': 'Facilities Services',
-          Farming: 'Farming',
-          'Financial Services': 'Financial Services',
-          'Fine Art': 'Fine Art',
-          Fishery: 'Fishery',
-          'Food & Beverages': 'Food & Beverages',
-          'Food Production': 'Food Production',
-          'Fund-Raising': 'Fund-Raising',
-          Furniture: 'Furniture',
-          'Gambling & Casinos': 'Gambling & Casinos',
-          Glass: 'Glass',
-          'Ceramics & Concrete': 'Ceramics & Concrete',
-          'Government Administration':
-            'Government Administration',
-          'Government Relations': 'Government Relations',
-          'Graphic Design': 'Graphic Design',
-          Health: 'Health',
-          'Wellness and Fitness': 'Wellness and Fitness',
-          'Higher Education': 'Higher Education',
-          Horticulture: 'Horticulture',
-          'Hospital & Health Care':
-            'Hospital & Health Care',
-          Hospitality: 'Hospitality',
-          'Human Resources': 'Human Resources',
-          'Import and Export': 'Import and Export',
-          'Individual & Family Services':
-            'Individual & Family Services',
-          'Industrial Automation': 'Industrial Automation',
-          'Information Services': 'Information Services',
-          'Information Technology and Services':
-            'Information Technology and Services',
-          Insurance: 'Insurance',
-          'International Affairs': 'International Affairs',
-          'International Trade and Development':
-            'International Trade and Development',
-          Internet: 'Internet',
-          'Investment Banking': 'Investment Banking',
-          'Investment Management': 'Investment Management',
-          Judiciary: 'Judiciary',
-          'Law Enforcement': 'Law Enforcement',
-          'Law Practice': 'Law Practice',
-          'Legal Services': 'Legal Services',
-          'Legislative Office': 'Legislative Office',
-          Leisure: 'Leisure',
-          'Travel & Tourism': 'Travel & Tourism',
-          Libraries: 'Libraries',
-          'Logistics and Supply Chain':
-            'Logistics and Supply Chain',
-          'Luxury Goods & Jewelry':
-            'Luxury Goods & Jewelry',
-          Machinery: 'Machinery',
-          'Management Consulting': 'Management Consulting',
-          Maritime: 'Maritime',
-          'Market Research': 'Market Research',
-          'Marketing and Advertising':
-            'Marketing and Advertising',
-          'Mechanical or Industrial Engineering':
-            'Mechanical or Industrial Engineering',
-          'Media Production': 'Media Production',
-          'Medical Devices': 'Medical Devices',
-          'Medical Practice': 'Medical Practice',
-          'Mental Health Care': 'Mental Health Care',
-          Military: 'Military',
-          'Mining & Metals': 'Mining & Metals',
-          'Mobile Games': 'Mobile Games',
-          'Motion Pictures and Film':
-            'Motion Pictures and Film',
-          'Museums and Institutions':
-            'Museums and Institutions',
-          Music: 'Music',
-          Nanotechnology: 'Nanotechnology',
-          Newspapers: 'Newspapers',
-          'Non-Profit Organization Management':
-            'Non-Profit Organization Management',
-          'Oil & Energy': 'Oil & Energy',
-          'Online Media': 'Online Media',
-          'Outsourcing/Offshoring':
-            'Outsourcing/Offshoring',
-          'Package/Freight Delivery':
-            'Package/Freight Delivery',
-          'Packaging and Containers':
-            'Packaging and Containers',
-          'Paper & Forest Products':
-            'Paper & Forest Products',
-          'Performing Arts': 'Performing Arts',
-          Pharmaceuticals: 'Pharmaceuticals',
-          Philanthropy: 'Philanthropy',
-          Photography: 'Photography',
-          Plastics: 'Plastics',
-          'Political Organization':
-            'Political Organization',
-          'Primary/Secondary Education':
-            'Primary/Secondary Education',
-          Printing: 'Printing',
-          'Professional Training & Coaching':
-            'Professional Training & Coaching',
-          'Program Development': 'Program Development',
-          'Public Policy': 'Public Policy',
-          'Public Relations and Communications':
-            'Public Relations and Communications',
-          'Public Safety': 'Public Safety',
-          Publishing: 'Publishing',
-          'Railroad Manufacture': 'Railroad Manufacture',
-          Ranching: 'Ranching',
-          'Real Estate': 'Real Estate',
-          'Recreational Facilities and Services':
-            'Recreational Facilities and Services',
-          'Religious Institutions':
-            'Religious Institutions',
-          'Renewables & Environment':
-            'Renewables & Environment',
-          Research: 'Research',
-          Restaurants: 'Restaurants',
-          Retail: 'Retail',
-          'Security and Investigations':
-            'Security and Investigations',
-          Semiconductors: 'Semiconductors',
-          Shipbuilding: 'Shipbuilding',
-          'Sporting Goods': 'Sporting Goods',
-          Sports: 'Sports',
-          'Staffing and Recruiting':
-            'Staffing and Recruiting',
-          Supermarkets: 'Supermarkets',
-          Telecommunications: 'Telecommunications',
-          Textiles: 'Textiles',
-          'Think Tanks': 'Think Tanks',
-          Tobacco: 'Tobacco',
-          'Translation and Localization':
-            'Translation and Localization',
-          'Transportation/Trucking/Railroad':
-            'Transportation/Trucking/Railroad',
-          Utilities: 'Utilities',
-          'Venture Capital & Private Equity':
-            'Venture Capital & Private Equity',
-          Veterinary: 'Veterinary',
-          Warehousing: 'Warehousing',
-          Wholesale: 'Wholesale',
-          'Wine and Spirits': 'Wine and Spirits',
-          Wireless: 'Wireless',
-          'Writing and Editing': 'Writing and Editing',
-        },
-        employee: {
-          '< 20': '< 20',
-          '21-100': '21-100',
-          '101-250': '101-250',
-          '250+': '250+',
-        },
-        thirdParties: {
-          '<5': '<5',
-          '5-20': '5-20',
-          '20+': '20+',
-        },
-        regulatoryCompliance: {
-          AICPA: 'AICPA',
-          CCPA: 'CCPA',
-          'CIS Controls': 'CIS Controls',
-          COBIT: 'COBIT',
-          COPPA: 'COPPA',
-          FedRAMP: 'FedRAMP',
-          FERPA: 'FERPA',
-          FISMA: 'FISMA',
-          GDPR: 'GDPR',
-          GLBA: 'GLBA',
-          HIPAA: 'HIPAA',
-          'ISO 27000 Family': 'ISO 27000 Family',
-          'ISO 31000 Family': 'ISO 31000 Family',
-          ITAR: 'ITAR',
-          'NERC CIP Standards NIST':
-            'NERC CIP Standards NIST',
-          'PCI-DSS': 'PCI-DSS',
-          SOC2: 'SOC2',
-          SOX: 'SOX',
-        },
-        technologyStack: {
-          'On-Premise IT': 'On-Premise IT',
-          Cloud: 'Cloud',
-          Development: 'Development',
-          'ICS/OT': 'ICS/OT',
+        type: {
+          Pusher: 'Pusher',
+          Hook: 'Hook',
         },
       },
       placeholders: {},
       hints: {},
       new: {
-        title: 'Novo Organization Profile',
+        title: 'New Facing',
       },
       view: {
-        title: 'Visualizar Organization Profile',
+        title: 'View Facing',
       },
       importer: {
-        title: 'Importar Organization Profiles',
-        fileName: 'organizationProfile_template_importacao',
-        hint: 'Arquivos/Imagens devem ser as URLs dos arquivos, separados por espaço. Relacionamentos devem ser os IDs separados por espaço.',
+        title: 'Import Facings',
+        fileName: 'facing_import_template',
+        hint: 'Files/Images columns must be the URLs of the files separated by space.',
       },
     },
   },

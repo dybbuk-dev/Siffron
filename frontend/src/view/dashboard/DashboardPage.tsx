@@ -1,7 +1,7 @@
 import Grid from '@mui/material/Grid';
-import RisksSummary from 'src/view/widgets/RisksSummary';
-import TasksSummary from 'src/view/widgets/TasksSummary';
-import VendorsSummary from 'src/view/widgets/VendorsSummary';
+import VerticalChart from 'src/view/widgets/VerticalChart';
+import HorizontalChart from 'src/view/widgets/HorizontalChart';
+import CircleChart from 'src/view/widgets/CircleChart';
 
 function DashboardPage(props) {
   return (
@@ -9,18 +9,14 @@ function DashboardPage(props) {
       <Grid container spacing={2}>
         <Grid item xs={12}>
           <Grid container spacing={2}>
-            <Grid item lg={4} md={6} sm={12} xs={12}>
-              <TasksSummary />
+            <Grid item lg={4} md={4} sm={12} xs={12}>
+              <VerticalChart />
             </Grid>
-            <Grid item lg={4} md={6} sm={12} xs={12}>
-              <Grid container spacing={2}>
-                <Grid item xs={12}>
-                  <RisksSummary />
-                </Grid>
-                <Grid item xs={12}>
-                  <VendorsSummary />
-                </Grid>
-              </Grid>
+            <Grid item lg={4} md={4} sm={12} xs={12}>
+              <HorizontalChart />
+            </Grid>
+            <Grid item lg={4} md={4} sm={12} xs={12}>
+              <CircleChart />
             </Grid>
           </Grid>
         </Grid>

@@ -19,7 +19,7 @@ Coded by www.creative-tim.com
  * You can customized the colors for the entire Material Dashboard 2 PRO React TSUI Dashboard PRO Material using thie file.
  */
 
-/** Importing for VOR Custom Colours */
+/** Importing for Custom Colours */
 import {
   yellow,
   orange,
@@ -95,7 +95,7 @@ interface Types {
   light: ColorsTypes | any;
   dark: ColorsTypes | any;
 
-  /**VOR CUSTOM COLOURS */
+  /** CUSTOM COLOURS */
   critical: ColorsTypes | any;
   high: ColorsTypes | any;
   medium: ColorsTypes | any;
@@ -259,7 +259,7 @@ const colors: Types = {
   },
 
   /**
-   * VOR CUSTOM COLOURS
+   *  CUSTOM COLOURS
    */
 
   critical: {
@@ -305,7 +305,7 @@ const colors: Types = {
   /**complete: {
     main: green[700],
     focus: green[700],
-  }, 
+  },
 
   active: {
     main: green[700],

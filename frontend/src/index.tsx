@@ -5,6 +5,8 @@ import { i18n, init as i18nInit } from 'src/i18n';
 import AuthService from './modules/auth/authService';
 import { AuthToken } from './modules/auth/authToken';
 import TenantService from './modules/tenant/tenantService';
+import * as serviceWorkerRegistration from './serviceWorkerRegistration';
+import reportWebVitals from './reportWebVitals';
 import '@fontsource/roboto/300.css';
 import '@fontsource/roboto/400.css';
 import '@fontsource/roboto/500.css';
@@ -30,3 +32,7 @@ import './assets/scrollbar.css';
     document.getElementById('root'),
   );
 })();
+
+serviceWorkerRegistration.unregister();
+
+reportWebVitals();
