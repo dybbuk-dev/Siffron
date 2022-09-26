@@ -85,7 +85,9 @@ function registerValidSW(swUrl: string, config?: Config) {
               // At this point, everything has been precached.
               // It's the perfect time to display a
               // "Content is cached for offline use." message.
-              console.log('Content is cached for offline use.');
+              console.log(
+                'Content is cached for offline use.',
+              );
 
               // Execute callback
               if (config && config.onSuccess) {
@@ -97,11 +99,17 @@ function registerValidSW(swUrl: string, config?: Config) {
       };
     })
     .catch((error) => {
-      console.error('Error during service worker registration:', error);
+      console.error(
+        'Error during service worker registration:',
+        error,
+      );
     });
 }
 
-function checkValidServiceWorker(swUrl: string, config?: Config) {
+function checkValidServiceWorker(
+  swUrl: string,
+  config?: Config,
+) {
   // Check if the service worker can be found. If it can't reload the page.
   fetch(swUrl, {
     headers: { 'Service-Worker': 'script' },
