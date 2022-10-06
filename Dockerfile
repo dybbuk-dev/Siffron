@@ -14,6 +14,7 @@ COPY ./ /src
 WORKDIR /src
 
 RUN yarn
-RUN yarn build
+RUN npm run db:create
+RUN npm run build
 
-CMD [ "node", ".dist/index.js" ]
+CMD [ "node", "./dist/server.js" ]
