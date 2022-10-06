@@ -4,7 +4,7 @@ import { Icon } from '@mui/material';
 
 const permissions = Permissions.values;
 
-const dashboard = [
+const dashboardRoutes = [
   {
     path: '/',
     exact: true,
@@ -14,7 +14,7 @@ const dashboard = [
   },
 ].filter(Boolean);
 
-const menus = [
+const managementRoutes = [
   {
     name: i18n('collapses.management.menu'),
     key: 'managements',
@@ -56,7 +56,9 @@ const menus = [
       },
     ],
   },
+].filter(Boolean);
 
+const settingRoutes = [
   {
     name: i18n('settings.menu'),
     key: 'settings',
@@ -111,8 +113,9 @@ const userRoutes = [
 ].filter(Boolean);
 
 export {
-  dashboard,
-  menus,
+  dashboardRoutes,
+  managementRoutes,
+  settingRoutes,
   profileRoutes,
   tenantRoutes,
   userRoutes,

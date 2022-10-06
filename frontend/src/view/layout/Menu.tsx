@@ -1,10 +1,16 @@
 import authSelectors from 'src/modules/auth/authSelectors';
 import { useDispatch, useSelector } from 'react-redux';
+import authActions from 'src/modules/auth/authActions';
+import MDButton from 'src/mui/components/MDButton';
+import { i18n } from 'src/i18n';
+import { Icon } from '@mui/material';
+import LogoutIcon from '@mui/icons-material/Logout';
 import PermissionChecker from 'src/modules/auth/permissionChecker';
 import layoutSelectors from 'src/modules/layout/layoutSelectors';
 import {
-  dashboard,
-  menus,
+  dashboardRoutes,
+  managementRoutes,
+  settingRoutes,
   profileRoutes,
   tenantRoutes,
   userRoutes,
@@ -19,7 +25,6 @@ import { useLocation, NavLink } from 'react-router-dom';
 import List from '@mui/material/List';
 import Divider from '@mui/material/Divider';
 import Link from '@mui/material/Link';
-import Icon from '@mui/material/Icon';
 
 // Material Dashboard 2 PRO React TS components
 import MDBox from 'src/mui/components/MDBox';
@@ -100,6 +105,10 @@ function Menu({
   } else if (whiteSidenav && darkMode) {
     textColor = 'inherit';
   }
+
+  const doSignout = () => {
+    dispatch(authActions.doSignout());
+  };
 
   const closeSidenav = () => {
     window.innerWidth >= 1200 &&
@@ -493,7 +502,7 @@ function Menu({
                 collapse: [...profileRoutes],
               },
               { type: 'divider', key: 'divider-0' },
-              ...dashboard,
+              ...dashboardRoutes,
               ...([
                 'multi',
                 'multi-with-subdomain',
@@ -501,9 +510,28 @@ function Menu({
                 ? tenantRoutes
                 : []),
               ...userRoutes,
-              ...menus,
+              ...managementRoutes,
+              { type: 'divider', key: 'divider-1' },
+              ...settingRoutes,
             ])}
           </List>
+          <MDButton
+            variant="text"
+            onClick={doSignout}
+            sx={{ padding: 0 }}
+          >
+            <SidenavCollapse
+              name={i18n('auth.signout')}
+              icon={
+                <LogoutIcon
+                  fontSize="medium"
+                  color="primary"
+                />
+              }
+              noCollapse={true}
+              active={false}
+            />
+          </MDButton>
         </MDBox>
       </SidenavRoot>
     </>

@@ -19,6 +19,7 @@ type Types = any;
 const appBar: Types = {
   defaultProps: {
     color: 'transparent',
+    bgColor: 'primary',
   },
 
   styleOverrides: {
